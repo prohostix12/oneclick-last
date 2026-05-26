@@ -23,6 +23,7 @@ const ICON_MAP = [Gift, Star, Zap, Star, Check];
 export default function PremiumScratchCard({ onClaim, onClose }: PremiumScratchCardProps) {
     const [phase, setPhase] = useState<'teaser' | 'offers' | 'form'>('teaser');
     const [offers, setOffers] = useState<Offer[]>([]);
+    const [offersReady, setOffersReady] = useState(false);
     const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,25 +36,24 @@ export default function PremiumScratchCard({ onClaim, onClose }: PremiumScratchC
             try {
                 const res = await fetch('/api/offer-settings');
                 const data = await res.json();
-                if (data.success && data.offers && data.offers.length > 0) {
-                    setOffers(data.offers);
+                if (data.success) {
+                    const now = new Date();
+                    const expiry = data.expiryDate ? new Date(data.expiryDate) : new Date('9999-12-31');
+                    if (!data.enabled || now > expiry) {
+                        onClose?.();
+                        return;
+                    }
+                    if (data.offers && data.offers.length > 0) {
+                        setOffers(data.offers);
+                        setOffersReady(true);
+                    } else {
+                        onClose?.();
+                    }
                 } else {
-                    setOffers([
-                        { id: '1', title: '20% Discount on Services', discount: '20% OFF', description: 'On your first advertising campaign', color: '#e61e25' },
-                        { id: '2', title: 'Free Branding Package', discount: 'FREE', description: 'Full corporate identity design', color: '#3b82f6' },
-                        { id: '3', title: 'Advertisement Design', discount: 'FREE', description: 'Professional billboard design', color: '#10b981' },
-                        { id: '4', title: 'Expert Consultation', discount: 'FREE', description: 'One-on-one strategy session', color: '#f59e0b' },
-                        { id: '5', title: 'Social Media Promotion', discount: 'FREE', description: 'One week of targeted social ads', color: '#8b5cf6' },
-                    ]);
+                    onClose?.();
                 }
             } catch {
-                setOffers([
-                    { id: '1', title: '20% Discount on Services', discount: '20% OFF', description: 'On your first advertising campaign', color: '#e61e25' },
-                    { id: '2', title: 'Free Branding Package', discount: 'FREE', description: 'Full corporate identity design', color: '#3b82f6' },
-                    { id: '3', title: 'Advertisement Design', discount: 'FREE', description: 'Professional billboard design', color: '#10b981' },
-                    { id: '4', title: 'Expert Consultation', discount: 'FREE', description: 'One-on-one strategy session', color: '#f59e0b' },
-                    { id: '5', title: 'Social Media Promotion', discount: 'FREE', description: 'One week of targeted social ads', color: '#8b5cf6' },
-                ]);
+                onClose?.();
             }
         };
 
@@ -133,7 +133,7 @@ export default function PremiumScratchCard({ onClaim, onClose }: PremiumScratchC
                                     position: 'relative'
                                 }}
                             >
-                                <div className="psc-new-card-wrap" onClick={() => setPhase('offers')} style={{ cursor: 'pointer' }}>
+                                <div className="psc-new-card-wrap" onClick={() => offersReady && setPhase('offers')} style={{ cursor: offersReady ? 'pointer' : 'wait' }}>
                                     {/* Perfect Circle Glow Spotlight */}
                                     <div className="psc-card-spotlight" />
                                     <div className="psc-shout-lines">

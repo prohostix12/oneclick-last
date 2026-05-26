@@ -39,8 +39,16 @@ export default function MysteryBoxSection({ isModal = false, isOpen = true, onCl
     fetch('/api/offer-settings')
       .then(res => res.json())
       .then(data => {
-        if (data.success && data.offers && data.offers.length > 0) {
-          setOffers(data.offers);
+        if (data.success) {
+          const now = new Date();
+          const expiry = new Date(data.expiryDate);
+          if (!data.enabled || now > expiry) {
+            setOffers([]);
+            return;
+          }
+          if (data.offers && data.offers.length > 0) {
+            setOffers(data.offers);
+          }
         }
       }).catch(console.error);
   }, []);
@@ -69,6 +77,7 @@ export default function MysteryBoxSection({ isModal = false, isOpen = true, onCl
   };
 
   if (isModal && !isOpen) return null;
+  if (!isModal && offers.length === 0) return null;
 
   const content = (
     <>

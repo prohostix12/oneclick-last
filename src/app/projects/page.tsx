@@ -126,6 +126,7 @@ function ProjectsContent() {
     const [dynamicProjects, setDynamicProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isScratchCardOpen, setIsScratchCardOpen] = useState(false);
+    const [offerEnabled, setOfferEnabled] = useState(false);
     const [enquireProject, setEnquireProject] = useState<string | null>(null);
 
     // 3D Parallax Mouse Tracking
@@ -158,9 +159,20 @@ function ProjectsContent() {
     useEffect(() => {
         // Immediately show static projects and set loading to false
         setIsLoading(false);
-        
+
         // Fetch dynamic projects in background without blocking UI
         fetchDynamicProjects();
+
+        fetch('/api/offer-settings')
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    const now = new Date();
+                    const expiry = new Date(data.expiryDate);
+                    setOfferEnabled(data.enabled !== false && now <= expiry);
+                }
+            })
+            .catch(() => setOfferEnabled(true));
         
         // Preload critical images
         const criticalImages = [
@@ -952,7 +964,7 @@ function ProjectsContent() {
 
         </div>
 
-        {isScratchCardOpen && (
+        {offerEnabled && isScratchCardOpen && (
             <PremiumScratchCard
                 onClose={() => setIsScratchCardOpen(false)}
             />

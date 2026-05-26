@@ -340,12 +340,11 @@ const OfferModal: React.FC<OfferModalProps> = ({ offer, onSave, onClose }) => {
 };
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
-type Tab = 'management' | 'leads' | 'settings';
+type Tab = 'management' | 'leads';
 
 const TAB_CONFIG: { id: Tab; label: string; icon: typeof Gift }[] = [
   { id: 'management', label: 'Offer Management', icon: Layers },
   { id: 'leads',      label: 'User Leads',        icon: Users },
-  { id: 'settings',   label: 'Settings',           icon: Settings },
 ];
 
 export default function InteractiveOffersAdmin() {
@@ -372,7 +371,11 @@ export default function InteractiveOffersAdmin() {
 
       if (settingsData.success) {
         setOffers(settingsData.offers || []);
-        setCfg({ enabled: settingsData.enabled, limit: settingsData.limit, expiryDate: settingsData.expiryDate });
+        setCfg({
+          enabled: settingsData.enabled ?? true,
+          limit: settingsData.limit ?? 100,
+          expiryDate: settingsData.expiryDate ?? '2026-12-31',
+        });
       }
       if (leadsData.success) setLeads(leadsData.data || []);
     } catch {
@@ -424,6 +427,12 @@ export default function InteractiveOffersAdmin() {
     setOffers(updated);
     persistSettings(updated);
     showToast('success', 'Offer deleted');
+  };
+
+  const handleClearAllOffers = () => {
+    if (!window.confirm('Remove all offers from the database? This cannot be undone.')) return;
+    setOffers([]);
+    persistSettings([]);
   };
 
   // ── Lead actions ───────────────────────────────────────────────────────────
@@ -573,14 +582,26 @@ export default function InteractiveOffersAdmin() {
                     {offers.length} / 10
                   </span>
                 </h2>
-                <button
-                  onClick={() => setModalOffer({})}
-                  disabled={offers.length >= 10}
-                  className="flex items-center gap-2 px-5 py-2-5 rounded-xl font-bold text-sm transition-all disabled-opacity-40 disabled-cursor-not-allowed cursor-pointer"
-                  style={{ background: 'white', color: '#e61e25', border: 'none', borderRadius: '4px', boxShadow: '0 0 15px rgba(255,255,255,0.1)' }}
-                >
-                  <Plus size={18} color="#e61e25" strokeWidth={3} /> Add Offer
-                </button>
+                <div className="flex items-center gap-3">
+                  {offers.length > 0 && (
+                    <button
+                      onClick={handleClearAllOffers}
+                      disabled={saving}
+                      className="flex items-center gap-2 px-4 py-2-5 rounded-xl font-bold text-sm transition-all cursor-pointer"
+                      style={{ background: 'rgba(230,30,37,0.1)', color: '#e61e25', border: '1px solid rgba(230,30,37,0.3)', borderRadius: '4px' }}
+                    >
+                      <Trash2 size={16} /> Clear All
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setModalOffer({})}
+                    disabled={offers.length >= 10}
+                    className="flex items-center gap-2 px-5 py-2-5 rounded-xl font-bold text-sm transition-all disabled-opacity-40 disabled-cursor-not-allowed cursor-pointer"
+                    style={{ background: 'white', color: '#e61e25', border: 'none', borderRadius: '4px', boxShadow: '0 0 15px rgba(255,255,255,0.1)' }}
+                  >
+                    <Plus size={18} color="#e61e25" strokeWidth={3} /> Add Offer
+                  </button>
+                </div>
               </div>
 
               {loading ? (
@@ -773,95 +794,6 @@ export default function InteractiveOffersAdmin() {
             </div>
           )}
 
-          {/* ═══════════════════ SETTINGS ═══════════════════ */}
-          {tab === 'settings' && (
-            <div className="max-w-xl space-y-5">
-              <h2 className="text-xl font-black text-white mb-6">Offer Section Settings</h2>
-
-              {/* Enable toggle */}
-              <div
-                className="flex items-center justify-between p-6 rounded-2xl"
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
-              >
-                <div>
-                  <div className="font-bold text-white mb-0.5">Section Visibility</div>
-                  <div className="text-sm text-white/30">Show or hide the offer reveal section on homepage</div>
-                </div>
-                <button
-                  onClick={() => setCfg((c) => ({ ...c, enabled: !c.enabled }))}
-                  className="transition-all"
-                >
-                  {cfg.enabled
-                    ? <ToggleRight size={40} className="text-[#e61e25]" />
-                    : <ToggleLeft size={40} className="text-white/20" />
-                  }
-                </button>
-              </div>
-
-              {/* Limit */}
-              <div
-                className="p-6 rounded-2xl"
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
-              >
-                <label className="block font-bold text-white mb-1">Offer Claim Limit</label>
-                <p className="text-sm text-white/30 mb-4">Total number of times offers can be claimed</p>
-                <input
-                  type="number"
-                  min={1}
-                  max={10000}
-                  value={cfg.limit}
-                  onChange={(e) => setCfg((c) => ({ ...c, limit: +e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none font-bold"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
-                />
-              </div>
-
-              {/* Expiry */}
-              <div
-                className="p-6 rounded-2xl"
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
-              >
-                <label className="block font-bold text-white mb-1">Expiry Date</label>
-                <p className="text-sm text-white/30 mb-4">Campaign will automatically deactivate after this date</p>
-                <input
-                  type="date"
-                  value={cfg.expiryDate}
-                  onChange={(e) => setCfg((c) => ({ ...c, expiryDate: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl text-white text-sm outline-none"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', colorScheme: 'dark' }}
-                />
-              </div>
-
-              {/* Save */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => persistSettings()}
-                disabled={saving}
-                className="w-full py-4 rounded-xl font-black text-white text-base uppercase tracking-widest flex items-center justify-center gap-3 transition-all"
-                style={{ background: '#e61e25', boxShadow: '0 0 30px rgba(230,30,37,0.3)', opacity: saving ? 0.7 : 1 }}
-              >
-                {saving
-                  ? <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  : <><Save size={20} /> Save Settings</>
-                }
-              </motion.button>
-
-              {/* Info box */}
-              <div
-                className="flex items-start gap-3 p-5 rounded-2xl"
-                style={{ background: 'rgba(230,30,37,0.06)', border: '1px solid rgba(230,30,37,0.15)' }}
-              >
-                <Sparkles size={18} className="text-[#e61e25] shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-white text-sm font-bold mb-1">Best Practices</div>
-                  <p className="text-white/40 text-xs leading-relaxed">
-                    For the best shuffle animation experience, maintain 5 different offers with varying colors. The section auto-hides when disabled or expired.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
         </motion.div>
       </AnimatePresence>
 

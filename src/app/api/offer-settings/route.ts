@@ -7,16 +7,10 @@ export const revalidate = 0;
 const SETTINGS_ID = 'main_config';
 
 const defaultSettings = {
-  enabled: true,
+  enabled: false,
   limit: 100,
   expiryDate: '2026-12-31',
-  offers: [
-    { id: '1', title: '20% Discount on Services',  discount: '20% OFF', description: 'On your first advertising campaign', color: '#e61e25' },
-    { id: '2', title: 'Free Branding Package',      discount: 'FREE',    description: 'Full corporate identity design', color: '#3b82f6' },
-    { id: '3', title: 'Advertisement Design',       discount: 'FREE',    description: 'Professional billboard design', color: '#10b981' },
-    { id: '4', title: 'Expert Consultation',        discount: 'FREE',    description: 'One-on-one strategy session', color: '#f59e0b' },
-    { id: '5', title: 'Social Media Promotion',     discount: 'FREE',    description: 'One week of targeted social ads', color: '#8b5cf6' },
-  ]
+  offers: [] as object[]
 };
 
 export async function GET() {

@@ -134,6 +134,7 @@ export default function Home() {
   const [currentLocationIndex, setCurrentLocationIndex] = useState(0);
   const [openBrandAccordion, setOpenBrandAccordion] = useState<number | null>(0);
   const [isScratchCardOpen, setIsScratchCardOpen] = useState(false);
+  const [offerEnabled, setOfferEnabled] = useState(false);
   const [enquireItem, setEnquireItem] = useState<string | null>(null);
   const [carouselPage, setCarouselPage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -150,6 +151,22 @@ export default function Home() {
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 400);
+
+    fetch('/api/offer-settings')
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          const now = new Date();
+          const expiry = data.expiryDate ? new Date(data.expiryDate) : new Date('9999-12-31');
+          setOfferEnabled(
+            data.enabled === true &&
+            now <= expiry &&
+            Array.isArray(data.offers) && data.offers.length > 0
+          );
+        }
+      })
+      .catch(() => setOfferEnabled(false));
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -256,7 +273,7 @@ export default function Home() {
 
   return (
     <>
-      {isScratchCardOpen && (
+      {offerEnabled && isScratchCardOpen && (
         <PremiumScratchCard
           onClose={() => setIsScratchCardOpen(false)}
           onClaim={() => {
@@ -376,7 +393,7 @@ export default function Home() {
 
 
 
-        <motion.div 
+        {offerEnabled && <motion.div
           className="claim-btn-floating-container"
           initial={isAdmin ? { opacity: 1, y: 0, scale: 0.45 } : { opacity: 0, y: 100, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 0.45 }}
@@ -510,7 +527,7 @@ export default function Home() {
                   </span>
               </div>
           </motion.div>
-        </motion.div>
+        </motion.div>}
 
         {/* Removed Services Paginated Carousel */}
       </section>

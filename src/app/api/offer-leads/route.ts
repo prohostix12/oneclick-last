@@ -9,7 +9,8 @@ export async function GET() {
   try {
     const db = await getDatabase();
     const leads = await db.collection('offer_leads').find({}).sort({ date: -1 }).toArray();
-    return NextResponse.json({ success: true, data: leads });
+    const data = leads.map(({ _id, ...rest }) => ({ ...rest, id: _id.toString() }));
+    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error('Error fetching offer leads:', error);
     return NextResponse.json({ success: false, error: 'Failed to fetch leads' }, { status: 500 });
