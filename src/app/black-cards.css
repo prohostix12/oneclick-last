@@ -1,0 +1,1089 @@
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Featured Portfolio Card Style - Premium & High Impact */
+.portfolio-item-featured {
+  background: linear-gradient(135deg, rgba(230, 30, 37, 0.1) 0%, rgba(12, 12, 12, 0.98) 100%) !important;
+  border: 1px solid rgba(230, 30, 37, 0.3) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-item-featured::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.portfolio-item-featured .portfolio-title,
+.portfolio-item-featured .service-title {
+  color: #ffffff !important;
+  font-size: 2rem !important;
+  border-left: 4px solid #e61e25;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.portfolio-item-featured .portfolio-divider,
+.portfolio-item-featured .service-divider {
+  background: linear-gradient(90deg, #e61e25, transparent) !important;
+  height: 3px !important;
+  width: 60px !important;
+  margin-left: 1.5rem;
+}
+
+.portfolio-item-featured .portfolio-desc,
+.portfolio-item-featured .service-desc {
+  color: rgba(255,255,255,0.8) !important;
+  padding-left: 1.5rem;
+  font-size: 1.1rem !important;
+}
+
+.portfolio-item-featured .portfolio-scallop,
+.portfolio-item-featured .service-scallop {
+  background: #e61e25 !important;
+  width: 120px !important;
+  height: 120px !important;
+  box-shadow: -10px -10px 30px rgba(230, 30, 37, 0.3);
+}
+
+.portfolio-item-featured .portfolio-number,
+.portfolio-item-featured .service-number {
+  font-size: 2rem !important;
+  color: white !important;
+  font-weight: 900 !important;
+}
+
+.service-card-black {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.service-card-black,
+.service-card-black::before,
+.service-card-black::after {
+  background: #2a2a2f !important;
+}
+
+.service-card-black * {
+  background: transparent !important;
+}
+
+.service-card-black h3 {
+  color: #ffffff !important;
+}
+
+.service-card-black p {
+  color: #cccccc !important;
+}
+
+.service-card-black li {
+  color: #ffffff !important;
+}
+
+/* Override any possible conflicting styles */
+div.service-card-black {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+section div.service-card-black {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.container div.service-card-black {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Data attribute approach */
+[data-theme="black"] {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+div[data-theme="black"] {
+  background: #2a2a2f !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* MOBILE BUTTON ALIGNMENT FIXES - COMPREHENSIVE */
+@media (max-width: 768px) {
+  /* Hero Section Button */
+  .hero-section .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.2rem 2rem !important;
+    font-size: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero Section Button Container */
+  .hero-section div[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* Success Stories Buttons */
+  .success-stories-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .success-stories-buttons .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 1.2rem 2rem !important;
+    font-size: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* General Button Fixes */
+  .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Button Container Fixes */
+  div[style*="display: flex"] .btn {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  /* About Section Buttons */
+  .grid-2 .btn {
+    width: 100% !important;
+    max-width: 250px !important;
+    margin: 0.5rem auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* About Section Button Container */
+  .grid-2 div[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* CTA Section Button */
+  .glass-card .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    padding: 1rem 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* CTA Ribbon Mobile */
+  .cta-ribbon {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    text-align: center !important;
+    padding: 2rem 1rem !important;
+    align-items: center !important;
+  }
+  
+  .cta-ribbon h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    text-align: center !important;
+  }
+  
+  .cta-ribbon .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Contact Form Button */
+  form .btn {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 1.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* FAQ Section Button */
+  .faq-container .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Process Section - Fix any button containers */
+  .section div[style*="textAlign: center"] .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Ensure all flex containers center their buttons */
+  div[style*="display: flex"][style*="justifyContent: center"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  /* Fix any inline flex styles */
+  div[style*="display: flex"][style*="gap"] .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Mobile Responsive Service Cards */
+@media (max-width: 768px) {
+  .service-card-black {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .service-card-black h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .service-card-black p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .service-card-black ul {
+    margin-top: 0.8rem !important;
+  }
+  
+  .service-card-black li {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .service-card-black div[style*="fontSize: '3rem'"] {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-black {
+    padding: 1.25rem !important;
+  }
+  
+  .service-card-black h3 {
+    font-size: 1rem !important;
+  }
+  
+  .service-card-black p {
+    font-size: 0.85rem !important;
+  }
+  
+  .service-card-black li {
+    font-size: 0.8rem !important;
+  }
+  
+  .service-card-black div[style*="fontSize: '3rem'"] {
+    font-size: 2rem !important;
+  }
+
+  /* Smaller mobile button adjustments */
+  .btn {
+    padding: 1rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .hero-section .btn {
+    padding: 1rem 1.5rem !important;
+  }
+
+  .success-stories-buttons .btn {
+    padding: 1rem 1.5rem !important;
+  }
+}
+/* Special Offer Scratch Card - Proper Spacing */
+.scratch-card-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.scratch-card-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.scratch-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.scratch-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  display: block;
+}
+
+.scratch-card-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: block;
+}
+
+.scratch-card-form-container {
+  margin-bottom: 1.5rem;
+}
+
+.scratch-card-input-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.scratch-card-input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.scratch-card-input:focus {
+  outline: none;
+  border-color: #e61e25;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scratch-card-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scratch-card-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scratch-card-button {
+  width: 100%;
+  background: linear-gradient(135deg, #e61e25 0%, #ff3333 100%);
+  color: white;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.scratch-card-button:hover {
+  background: linear-gradient(135deg, #ff3333 0%, #ff4444 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 30, 37, 0.3);
+}
+
+.scratch-card-trust-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scratch-card-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scratch-card-trust-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.trust-secure { background-color: #10b981; }
+.trust-no-spam { background-color: #3b82f6; }
+.trust-instant { background-color: #8b5cf6; }
+
+.scratch-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.scratch-card-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.scratch-card-error {
+  color: #ff6b6b;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .scratch-card-container {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .scratch-card-title {
+    font-size: 1.25rem;
+  }
+  
+  .scratch-card-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .scratch-card-trust-indicators {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .scratch-card-container {
+    padding: 1.25rem;
+  }
+  
+  .scratch-card-title {
+    font-size: 1.125rem;
+  }
+  
+  .scratch-card-input {
+    padding: 10px 14px 10px 36px;
+    font-size: 0.85rem;
+  }
+  
+  .scratch-card-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+/* Inline Scratch Card Styles */
+
+/* Below Hero Placement */
+.inline-scratch-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.inline-scratch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(230, 30, 37, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Floating Popup Placement */
+.floating-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.floating-scratch-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Sticky Corner Placement */
+.sticky-scratch-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 350px;
+  width: 350px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sticky-scratch-card.minimized {
+  width: 120px;
+  height: 60px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.minimized-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+/* Header Styles */
+.scratch-card-inline-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.scratch-card-inline-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.sticky-scratch-card .scratch-card-inline-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.scratch-card-inline-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sticky-scratch-card .scratch-card-inline-subtitle {
+  font-size: 0.8rem;
+}
+
+/* Form Styles */
+.scratch-card-inline-form {
+  position: relative;
+  z-index: 2;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sticky-scratch-card .form-grid {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px 14px 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.sticky-scratch-card .form-input {
+  padding: 10px 14px 10px 36px;
+  font-size: 0.8rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #e61e25;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(230, 30, 37, 0.1);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.75rem;
+  margin-top: 6px;
+  display: block;
+  padding-left: 4px;
+}
+
+/* Button Styles */
+.reveal-button {
+  width: 100%;
+  background: linear-gradient(135deg, #e61e25 0%, #ff3333 100%);
+  color: white;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 15px rgba(230, 30, 37, 0.2);
+}
+
+.sticky-scratch-card .reveal-button {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+}
+
+.reveal-button:hover {
+  background: linear-gradient(135deg, #ff3333 0%, #ff4444 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 30, 37, 0.35);
+}
+
+.reveal-button:active {
+  transform: translateY(0);
+}
+
+.claim-button {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+.claim-button:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+}
+
+.claim-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Trust Indicators */
+.trust-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sticky-scratch-card .trust-indicators {
+  gap: 1rem;
+  font-size: 0.7rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.trust-dot.secure { background-color: #10b981; }
+.trust-dot.no-spam { background-color: #3b82f6; }
+.trust-dot.instant { background-color: #8b5cf6; }
+
+/* Scratch Card Mock */
+.scratch-reveal {
+  text-align: center;
+}
+
+.scratch-card-mock {
+  position: relative;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scratch-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.scratch-card-mock:hover .scratch-overlay {
+  opacity: 0.8;
+}
+
+.scratch-content {
+  text-align: center;
+  color: #1f2937;
+}
+
+.scratch-content h4 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.scratch-content p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Result Content */
+.result-content {
+  text-align: center;
+}
+
+.offer-display {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.offer-display h4 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.offer-display h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.offer-display p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Close and Minimize Buttons */
+.scratch-card-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.scratch-card-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.scratch-card-minimize-btn {
+  position: absolute;
+  top: 12px;
+  right: 45px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.scratch-card-minimize-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .inline-scratch-card {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .scratch-card-inline-title {
+    font-size: 1.5rem;
+  }
+  
+  .scratch-card-inline-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .floating-scratch-card {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .sticky-scratch-card {
+    bottom: 20px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100vw - 40px);
+    max-width: 400px;
+    z-index: 9999;
+  }
+  
+  .trust-indicators {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .reveal-button, .claim-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inline-scratch-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .scratch-card-inline-title {
+    font-size: 1.25rem;
+  }
+  
+  .scratch-card-inline-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .sticky-scratch-card {
+    width: calc(100vw - 30px);
+  }
+  
+  .sticky-scratch-card.minimized {
+    width: 100px;
+    height: 50px;
+  }
+  
+  .form-input {
+    padding: 12px 16px 12px 40px;
+    font-size: 0.9rem;
+  }
+  
+  .reveal-button, .claim-button {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}

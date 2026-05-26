@@ -1,0 +1,282 @@
+.animated-circle-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+/* Central glowing 3D orb */
+.glowing-orb {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  
+  /* Glassmorphism base - deeply transparent red/crimson */
+  background: radial-gradient(120% 120% at 30% 30%, rgba(255, 50, 50, 0.2) 0%, rgba(150, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
+  
+  /* Deep 3D shadows & vivid neon edges */
+  box-shadow: 
+    inset -15px -15px 30px rgba(100, 0, 0, 0.8),    /* Deep dark red shadow bottom right */
+    inset 15px 15px 30px rgba(255, 100, 100, 0.5),  /* Bright red highlight top left */
+    inset 0 0 20px rgba(255, 255, 255, 0.6),        /* Inner rim light */
+    0 20px 50px rgba(0, 0, 0, 0.8),                 /* Drop shadow for floating effect */
+    0 0 60px rgba(230, 30, 37, 0.4);                /* Outer red glow */
+    
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 
+  3D Twisting Ribbons
+  These emulate the 3D folded, silk-like volumetric threads inside the sphere.
+*/
+.ribbon {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 40% 60% 60% 40% / 50%;
+  filter: blur(4px);
+  mix-blend-mode: screen;
+  box-shadow: inset 20px 20px 40px rgba(255, 100, 100, 0.4), inset -20px -20px 40px rgba(150, 0, 0, 0.6);
+  opacity: 0.8;
+  transform-style: preserve-3d;
+}
+
+.ribbon-1 {
+  background: conic-gradient(from 0deg, rgba(230, 30, 37, 0.8), rgba(150, 0, 0, 0.2), rgba(255, 100, 0, 0.5), rgba(230, 30, 37, 0.8));
+  animation: ribbon-twist-1 12s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+.ribbon-2 {
+  background: conic-gradient(from 90deg, rgba(200, 0, 30, 0.8), rgba(255, 100, 100, 0.4), rgba(100, 0, 0, 0.8), rgba(200, 0, 30, 0.8));
+  animation: ribbon-twist-2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate-reverse;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  mix-blend-mode: color-dodge;
+}
+
+.ribbon-3 {
+  background: conic-gradient(from 180deg, rgba(255, 200, 0, 0.3), rgba(255, 50, 50, 0.8), rgba(150, 0, 0, 0.4), rgba(255, 200, 0, 0.3));
+  animation: ribbon-twist-3 10s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  width: 70%;
+  height: 70%;
+  top: 15%;
+  left: 15%;
+}
+
+.ribbon-4 {
+  background: radial-gradient(circle at center, rgba(255, 80, 80, 0.9) 0%, transparent 70%);
+  animation: ribbon-twist-4 8s linear infinite;
+  mix-blend-mode: overlay;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+@keyframes ribbon-twist-1 {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); border-radius: 40% 60% 60% 40% / 50%; }
+  100% { transform: rotateX(180deg) rotateY(360deg) rotateZ(180deg) scale(1.1); border-radius: 60% 40% 40% 60% / 50%; }
+}
+
+@keyframes ribbon-twist-2 {
+  0% { transform: rotateX(360deg) rotateY(0deg) rotateZ(360deg) scale(1.1); border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; }
+  100% { transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) scale(1); border-radius: 30% 70% 50% 50% / 40% 60% 40% 60%; }
+}
+
+@keyframes ribbon-twist-3 {
+  0% { transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1); border-radius: 50%; }
+  100% { transform: rotateX(360deg) rotateY(0deg) rotateZ(360deg) scale(1.2); border-radius: 40% 60% 70% 30% / 50%; }
+}
+
+@keyframes ribbon-twist-4 {
+  0% { transform: rotateX(0deg) rotateY(0deg) scale(0.9); }
+  50% { transform: rotateX(180deg) rotateY(180deg) scale(1.1); }
+  100% { transform: rotateX(360deg) rotateY(360deg) scale(0.9); }
+}
+
+/* Specular highlight for glass effect */
+.glass-highlight {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  width: 70%;
+  height: 35%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: rotate(-35deg);
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(3px);
+  z-index: 6;
+  opacity: 0.9;
+}
+
+/* Multiple Outer Rings matching the "Loading" & "Listening" effects */
+
+/* Ring 1: The thick glowing tail (Loading effect) */
+.spinning-ring-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: 2;
+  background: conic-gradient(from 0deg, transparent 70%, rgba(230, 30, 37, 0.5) 85%, rgba(255, 255, 255, 1) 100%);
+  -webkit-mask: radial-gradient(transparent 68%, black 69%);
+  mask: radial-gradient(transparent 68%, black 69%);
+  animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 30px rgba(230, 30, 37, 0.6));
+}
+
+/* Ring 2: Thin offset echoing rings (Listening effect) */
+.spinning-ring-2 {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  animation: spin 5s linear infinite reverse, echo-pulse 4s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px rgba(230, 30, 37, 0.3);
+}
+
+/* Ring 3: Outer pulsating aura - Styled to match the logo's "O" */
+.spinning-ring-3 {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 0% 50% 50% 50%;
+  z-index: 0;
+  border: 1px solid rgba(230, 30, 37, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  animation: spin 8s linear infinite, echo-pulse 5s ease-in-out infinite alternate-reverse;
+  box-shadow: inset 0 0 15px rgba(230, 30, 37, 0.2);
+}
+
+.animated-circle-container.is-zigzagging .spinning-ring-3 {
+  border-radius: 50% !important;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}
+
+@keyframes morph-thread-1 {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  33% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  66% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+@keyframes morph-thread-2 {
+  0% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+  33% { border-radius: 30% 70% 60% 40% / 60% 40% 70% 30%; }
+  66% { border-radius: 50% 50% 20% 80% / 40% 60% 30% 70%; }
+  100% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+}
+
+@keyframes morph-thread-3 {
+  0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+  50% { border-radius: 20% 80% 40% 60% / 80% 20% 60% 40%; }
+  100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+}
+
+@keyframes echo-pulse {
+  0% { transform: scale(0.95) rotate(0deg); opacity: 0.3; }
+  100% { transform: scale(1.05) rotate(180deg); opacity: 0.9; }
+}
+
+/* Text */
+.service-text-wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.service-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  fill: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.service-name.long-name {
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+}
+
+.service-name.medium-name {
+  font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+}
+
+@media (max-width: 768px) {
+  .animated-circle-container {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .spinning-ring-1 {
+    width: 235px !important;
+    height: 235px !important;
+  }
+  .spinning-ring-2 {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .spinning-ring-3 {
+    width: 265px !important;
+    height: 265px !important;
+  }
+  .glowing-orb {
+    width: 200px !important;
+    height: 200px !important;
+    padding: 1rem !important;
+  }
+  .service-name {
+    font-size: 0.95rem !important;
+  }
+  .service-name.long-name {
+    font-size: 0.82rem !important;
+  }
+  .service-name.medium-name {
+    font-size: 0.88rem !important;
+  }
+}

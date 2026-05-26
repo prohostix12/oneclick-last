@@ -1,0 +1,122 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="vanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#FF6B00;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#FF8533;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#B0E0E6;stop-opacity:1" />
+</linearGradient>
+</defs>
+
+<!-- Sky Background -->
+<rect width="1200" height="450" fill="url(#skyGradient)"/>
+
+<!-- City Skyline -->
+<rect x="0" y="200" width="100" height="250" fill="#666666" opacity="0.7"/>
+<rect x="120" y="150" width="80" height="300" fill="#777777" opacity="0.7"/>
+<rect x="220" y="180" width="60" height="270" fill="#666666" opacity="0.7"/>
+<rect x="1000" y="120" width="90" height="330" fill="#777777" opacity="0.7"/>
+<rect x="1110" y="160" width="70" height="290" fill="#666666" opacity="0.7"/>
+
+<!-- Road -->
+<rect x="0" y="450" width="1200" height="350" fill="#444444"/>
+<!-- Road Markings -->
+<rect x="0" y="520" width="120" height="10" fill="#FFFF00"/>
+<rect x="180" y="520" width="120" height="10" fill="#FFFF00"/>
+<rect x="360" y="520" width="120" height="10" fill="#FFFF00"/>
+<rect x="540" y="520" width="120" height="10" fill="#FFFF00"/>
+<rect x="720" y="520" width="120" height="10" fill="#FFFF00"/>
+<rect x="900" y="520" width="120" height="10" fill="#FFFF00"/>
+
+<!-- Van Shadow -->
+<ellipse cx="600" cy="580" rx="350" ry="25" fill="#000000" opacity="0.3"/>
+
+<!-- Service Van Body -->
+<rect x="200" y="250" width="800" height="300" rx="25" fill="#FFFFFF"/>
+
+<!-- Van Cab -->
+<rect x="200" y="280" width="220" height="270" rx="15" fill="url(#vanGradient)"/>
+
+<!-- Main Branding Area -->
+<rect x="440" y="280" width="560" height="270" rx="15" fill="url(#vanGradient)"/>
+
+<!-- Service Icon Area -->
+<rect x="470" y="320" width="120" height="120" rx="15" fill="#FFFFFF"/>
+<text x="530" y="390" font-family="Arial, sans-serif" font-size="48" fill="#FF6B00" text-anchor="middle">🔧</text>
+
+<!-- Company Name -->
+<text x="750" y="350" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SERVICE</text>
+<text x="750" y="400" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">EXPERTS</text>
+
+<!-- Service Description -->
+<text x="750" y="440" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle">24/7 Emergency Service</text>
+<text x="750" y="470" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle">Licensed &amp; Insured</text>
+
+<!-- Contact Information -->
+<text x="750" y="510" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">📞 050-SERVICE</text>
+
+<!-- Van Windows -->
+<rect x="220" y="300" width="90" height="70" rx="8" fill="#87CEEB"/>
+<rect x="330" y="300" width="70" height="70" rx="8" fill="#87CEEB"/>
+<!-- Windshield -->
+<rect x="220" y="390" width="180" height="50" rx="8" fill="#87CEEB"/>
+
+<!-- Side Door -->
+<rect x="600" y="400" width="80" height="130" rx="8" fill="#DDDDDD"/>
+<rect x="610" y="450" width="12" height="25" rx="6" fill="#999999"/>
+
+<!-- Rear Doors -->
+<rect x="920" y="400" width="70" height="130" rx="8" fill="#DDDDDD"/>
+<rect x="930" y="450" width="10" height="20" rx="5" fill="#999999"/>
+
+<!-- Wheels -->
+<circle cx="300" cy="570" r="40" fill="#1A1A1A"/>
+<circle cx="850" cy="570" r="40" fill="#1A1A1A"/>
+
+<!-- Wheel Rims -->
+<circle cx="300" cy="570" r="22" fill="#C0C0C0"/>
+<circle cx="850" cy="570" r="22" fill="#C0C0C0"/>
+
+<!-- Rim Spokes -->
+<rect x="295" y="555" width="10" height="30" fill="#808080"/>
+<rect x="285" y="565" width="30" height="10" fill="#808080"/>
+
+<rect x="845" y="555" width="10" height="30" fill="#808080"/>
+<rect x="835" y="565" width="30" height="10" fill="#808080"/>
+
+<!-- Headlights -->
+<ellipse cx="220" cy="530" rx="20" ry="12" fill="#FFFF99"/>
+<ellipse cx="220" cy="510" rx="15" ry="10" fill="#FFFFFF"/>
+
+<!-- Front Grille -->
+<rect x="200" y="480" width="25" height="60" rx="3" fill="#333333"/>
+<rect x="205" y="485" width="15" height="4" fill="#C0C0C0"/>
+<rect x="205" y="495" width="15" height="4" fill="#C0C0C0"/>
+<rect x="205" y="505" width="15" height="4" fill="#C0C0C0"/>
+<rect x="205" y="515" width="15" height="4" fill="#C0C0C0"/>
+<rect x="205" y="525" width="15" height="4" fill="#C0C0C0"/>
+
+<!-- License Plate -->
+<rect x="280" y="520" width="60" height="20" rx="3" fill="#FFFFFF"/>
+<rect x="285" y="525" width="50" height="10" rx="2" fill="#000000"/>
+<text x="310" y="533" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle">UAE-123</text>
+
+<!-- Side Mirror -->
+<rect x="420" y="340" width="20" height="12" rx="3" fill="#333333"/>
+<rect x="425" y="343" width="12" height="8" rx="2" fill="#87CEEB"/>
+
+<!-- Roof Equipment -->
+<rect x="500" y="270" width="200" height="15" rx="7" fill="#DDDDDD"/>
+<rect x="520" y="260" width="20" height="20" rx="3" fill="#FF6B00"/>
+<rect x="560" y="260" width="20" height="20" rx="3" fill="#FF6B00"/>
+
+<!-- Background Elements -->
+<circle cx="100" cy="100" rx="40" ry="20" fill="#FFFFFF" opacity="0.8"/>
+<circle cx="1100" cy="80" rx="50" ry="25" fill="#FFFFFF" opacity="0.8"/>
+
+<!-- Title and Description -->
+<text x="600" y="80" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#FF6B00" text-anchor="middle">SERVICE VEHICLE BRANDING</text>
+<text x="600" y="720" font-family="Arial, sans-serif" font-size="22" fill="#666666" text-anchor="middle">Professional Service Van Wrapping &amp; Mobile Advertising Solutions</text>
+</svg>

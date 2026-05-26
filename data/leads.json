@@ -1,0 +1,29 @@
+[
+  {
+    "fullName": "Test User",
+    "email": "test@test.com",
+    "phone": "+971501234567",
+    "interestedService": "Branding",
+    "source": "test",
+    "submittedAt": "2024-01-01T00:00:00Z",
+    "emailLower": "test@test.com",
+    "createdAt": "2026-05-04T04:52:56.448Z",
+    "updatedAt": "2026-05-04T04:52:56.448Z",
+    "status": "new",
+    "_id": "1777870377170"
+  },
+  {
+    "fullName": "Prohostix",
+    "email": "prohostix12@gmail.com",
+    "phone": "8989898998",
+    "companyName": "kh",
+    "interestedService": "Branding for everyone",
+    "source": "home-page",
+    "submittedAt": "2026-05-04T04:54:02.665Z",
+    "emailLower": "prohostix12@gmail.com",
+    "createdAt": "2026-05-04T04:54:02.927Z",
+    "updatedAt": "2026-05-04T04:54:02.927Z",
+    "status": "new",
+    "_id": "1777870443494"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b1b1",
+    "id": "65f2a1b1b1b1b1b1b1b1b1b1",
+    "name": "Architectural Signage",
+    "description": "AI-optimized physical signage solutions that withstand the UAE climate while maintaining premium aesthetics.",
+    "category": "Physical",
+    "image": "/signage-production.png",
+    "items": [
+      "3D Fabricated Letters",
+      "Wayfinding Systems",
+      "Industrial Cladding",
+      "Monument Signs",
+      "Pylon Signs"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  },
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b1b2",
+    "id": "65f2a1b1b1b1b1b1b1b1b1b2",
+    "name": "Digital Facades",
+    "description": "High-resolution LED screens and dynamic surfaces integrated with your building's architecture.",
+    "category": "Digital",
+    "image": "/signage-cladding.png",
+    "items": [
+      "Transparent LED Glass",
+      "Outdoor Video Walls",
+      "Architectural Lighting",
+      "Media Facades",
+      "Interactive Displays"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  },
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b1b3",
+    "id": "65f2a1b1b1b1b1b1b1b1b1b3",
+    "name": "Fleet Branding",
+    "description": "Complete transformation of your corporate fleet using RTA-approved premium wrapping materials.",
+    "category": "Transformation",
+    "image": "/signage-vehicle.png",
+    "items": [
+      "Full Body Wraps",
+      "RTA Approval Management",
+      "Protective Laminates",
+      "Fleet Design",
+      "Installation & Warranty"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  },
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b1b4",
+    "id": "65f2a1b1b1b1b1b1b1b1b1b4",
+    "name": "Digital Printing",
+    "description": "Large format printing for indoor and outdoor applications with UV-resistant materials.",
+    "category": "Printing",
+    "image": "/signage-digital-print.png",
+    "items": [
+      "Banner Printing",
+      "Wall Graphics",
+      "Window Graphics",
+      "Floor Graphics",
+      "Exhibition Graphics"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  },
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b5",
+    "id": "65f2a1b1b1b1b1b1b1b1b5",
+    "name": "Exhibition & Events",
+    "description": "Complete exhibition stand design, fabrication, and installation services.",
+    "category": "Events",
+    "image": "/signage-exhibition.png",
+    "items": [
+      "Stand Design",
+      "Fabrication",
+      "Installation",
+      "Graphics",
+      "Audio Visual"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  },
+  {
+    "_id": "65f2a1b1b1b1b1b1b1b1b6",
+    "id": "65f2a1b1b1b1b1b1b1b1b6",
+    "name": "Neon & LED Signs",
+    "description": "Custom neon and LED signage for retail, hospitality, and entertainment venues.",
+    "category": "Lighting",
+    "image": "/signage-branding.png",
+    "items": [
+      "Custom Neon",
+      "LED Channel Letters",
+      "Backlit Signs",
+      "RGB Lighting",
+      "Smart Controls"
+    ],
+    "createdAt": "2026-05-20T00:00:00.000Z"
+  }
+]

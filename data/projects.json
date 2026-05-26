@@ -1,0 +1,42 @@
+[
+  {
+    "id": "demo_2",
+    "title": "Global Digital Campaign",
+    "description": "Cross-platform digital advertisement strategy that delivered over 50M impressions across social media and various display networks globally.",
+    "category": "Digital",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+    "clientName": "TechGlobal Corp",
+    "status": "published",
+    "createdAt": "2026-03-26T00:01:00.000Z"
+  },
+  {
+    "id": "demo_3",
+    "title": "Prime LED Signage",
+    "description": "State-of-the-art 3D LED signage installation in the heart of Downtown Dubai, featuring high-visibility nighttime illuminations.",
+    "category": "Signage",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
+    "clientName": "Marina Towers",
+    "status": "published",
+    "createdAt": "2026-03-26T00:02:00.000Z"
+  },
+  {
+    "id": "demo_4",
+    "title": "Elite Fleet Branding",
+    "description": "Full vinyl wrap for a fleet of 50 delivery vehicles, maintaining perfect brand color consistency across all units.",
+    "category": "Vehicle",
+    "image": "https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=800&q=80",
+    "clientName": "QuickDelivery UAE",
+    "status": "published",
+    "createdAt": "2026-03-26T00:03:00.000Z"
+  },
+  {
+    "id": "1774590625818",
+    "title": "df",
+    "description": "vbn",
+    "category": "Events",
+    "image": "",
+    "clientName": "cv",
+    "status": "published",
+    "createdAt": "2026-03-27T05:50:25.818Z"
+  }
+]

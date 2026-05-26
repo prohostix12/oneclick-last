@@ -1,0 +1,37 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#2A2A2A"/>
+<!-- Road -->
+<rect x="0" y="650" width="1200" height="150" fill="#444444"/>
+<rect x="0" y="720" width="1200" height="15" fill="#FFFF00"/>
+<!-- Van Body -->
+<rect x="150" y="200" width="900" height="400" rx="30" fill="#FFFFFF"/>
+<!-- Van Cab -->
+<rect x="150" y="250" width="200" height="350" rx="15" fill="#3374DC"/>
+<!-- Branding Area -->
+<rect x="370" y="250" width="680" height="350" rx="10" fill="#E61E25"/>
+<!-- Company Logo Area -->
+<rect x="420" y="320" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<text x="520" y="390" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#E61E25" text-anchor="middle">LOGO</text>
+<!-- Company Name -->
+<text x="750" y="370" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">DELIVERY</text>
+<text x="750" y="430" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">EXPRESS</text>
+<text x="750" y="480" font-family="Arial, sans-serif" font-size="24" fill="#FFFFFF" text-anchor="middle">Fast & Reliable Service</text>
+<text x="750" y="520" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">800-DELIVERY</text>
+<!-- Windows -->
+<rect x="170" y="270" width="80" height="60" rx="5" fill="#87CEEB"/>
+<rect x="270" y="270" width="60" height="60" rx="5" fill="#87CEEB"/>
+<!-- Side Door -->
+<rect x="650" y="400" width="80" height="180" rx="5" fill="#CCCCCC"/>
+<rect x="660" y="450" width="10" height="30" rx="5" fill="#888888"/>
+<!-- Wheels -->
+<circle cx="250" cy="670" r="45" fill="#333333"/>
+<circle cx="850" cy="670" r="45" fill="#333333"/>
+<!-- Wheel Rims -->
+<circle cx="250" cy="670" r="25" fill="#CCCCCC"/>
+<circle cx="850" cy="670" r="25" fill="#CCCCCC"/>
+<!-- Headlights -->
+<ellipse cx="170" cy="620" rx="20" ry="12" fill="#FFFF80"/>
+<!-- Background Text -->
+<text x="600" y="120" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">DELIVERY VAN BRANDING</text>
+<text x="600" y="770" font-family="Arial, sans-serif" font-size="18" fill="#CCCCCC" text-anchor="middle">Professional Fleet Vehicle Wrapping & Graphics</text>
+</svg>

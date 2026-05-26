@@ -1,0 +1,10 @@
+﻿0d0f59b fix: remove frontend preview from admin projects page
+95cee74 feat: add frontend preview panels and edit functionality to admin services & projects pages
+ee9d7c4 fix: reduce portfolio card height, fix heading gap, make service cards smaller
+a25cef2 fix: remove icons/emojis from mobile navbar menu links
+be6d0cd fix: perfect about hero alignment and animation for mobile
+4e2c0a9 feat: mega size increase for projects page images (650px desktop, 350-400px mobile)
+95363bd fix: center about page hero section on mobileviewports
+cbca67d feat: mega size increase for service cards (480px desktop, 350px mobile)
+f36dbe5 fix: change navbar from fixed to absolute positioning at the top of the page
+fed6df0 feat: upgrade service images to high-impact premium versions and increase card size

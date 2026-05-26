@@ -1,0 +1,112 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="truckGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#E61E25;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#FF4444;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#555555;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+</linearGradient>
+</defs>
+
+<!-- Sky Background -->
+<rect width="1200" height="500" fill="#87CEEB"/>
+<!-- Clouds -->
+<ellipse cx="200" cy="100" rx="60" ry="30" fill="#FFFFFF" opacity="0.8"/>
+<ellipse cx="800" cy="80" rx="80" ry="40" fill="#FFFFFF" opacity="0.8"/>
+<ellipse cx="1000" cy="120" rx="50" ry="25" fill="#FFFFFF" opacity="0.8"/>
+
+<!-- Road -->
+<rect x="0" y="500" width="1200" height="300" fill="url(#roadGradient)"/>
+<!-- Road Lines -->
+<rect x="0" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="150" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="300" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="450" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="600" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="750" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="900" y="580" width="100" height="8" fill="#FFFF00"/>
+<rect x="1050" y="580" width="100" height="8" fill="#FFFF00"/>
+
+<!-- Truck Shadow -->
+<ellipse cx="600" cy="650" rx="450" ry="30" fill="#000000" opacity="0.3"/>
+
+<!-- Truck Chassis -->
+<rect x="150" y="350" width="900" height="250" rx="15" fill="#DDDDDD"/>
+
+<!-- Truck Cab -->
+<rect x="150" y="300" width="280" height="300" rx="20" fill="#2C5AA0"/>
+<!-- Cab Windows -->
+<rect x="170" y="320" width="100" height="80" rx="8" fill="#87CEEB"/>
+<rect x="290" y="320" width="120" height="80" rx="8" fill="#87CEEB"/>
+<!-- Windshield -->
+<rect x="170" y="420" width="240" height="60" rx="8" fill="#87CEEB"/>
+
+<!-- Main Trailer with Branding -->
+<rect x="450" y="300" width="600" height="300" rx="15" fill="url(#truckGradient)"/>
+
+<!-- Company Logo Area -->
+<rect x="480" y="340" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<text x="580" y="390" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#E61E25" text-anchor="middle">COMPANY</text>
+<text x="580" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#E61E25" text-anchor="middle">LOGO</text>
+
+<!-- Main Branding Text -->
+<text x="800" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PREMIUM</text>
+<text x="800" y="470" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">LOGISTICS</text>
+
+<!-- Contact Information -->
+<text x="800" y="520" font-family="Arial, sans-serif" font-size="24" fill="#FFFFFF" text-anchor="middle">📞 800-LOGISTICS</text>
+<text x="800" y="550" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle">www.premiumlogistics.ae</text>
+
+<!-- Decorative Elements -->
+<rect x="700" y="340" width="4" height="220" fill="#FFFFFF"/>
+<rect x="720" y="340" width="4" height="220" fill="#FFFFFF"/>
+
+<!-- Wheels -->
+<circle cx="250" cy="620" r="45" fill="#1A1A1A"/>
+<circle cx="350" cy="620" r="45" fill="#1A1A1A"/>
+<circle cx="550" cy="620" r="45" fill="#1A1A1A"/>
+<circle cx="900" cy="620" r="45" fill="#1A1A1A"/>
+
+<!-- Wheel Rims -->
+<circle cx="250" cy="620" r="25" fill="#C0C0C0"/>
+<circle cx="350" cy="620" r="25" fill="#C0C0C0"/>
+<circle cx="550" cy="620" r="25" fill="#C0C0C0"/>
+<circle cx="900" cy="620" r="25" fill="#C0C0C0"/>
+
+<!-- Rim Details -->
+<circle cx="250" cy="620" r="15" fill="#808080"/>
+<circle cx="350" cy="620" r="15" fill="#808080"/>
+<circle cx="550" cy="620" r="15" fill="#808080"/>
+<circle cx="900" cy="620" r="15" fill="#808080"/>
+
+<!-- Headlights -->
+<ellipse cx="170" cy="580" rx="25" ry="15" fill="#FFFF99"/>
+<ellipse cx="170" cy="560" rx="20" ry="12" fill="#FFFFFF"/>
+
+<!-- Grille -->
+<rect x="150" y="520" width="30" height="80" rx="5" fill="#333333"/>
+<rect x="155" y="530" width="20" height="5" fill="#C0C0C0"/>
+<rect x="155" y="540" width="20" height="5" fill="#C0C0C0"/>
+<rect x="155" y="550" width="20" height="5" fill="#C0C0C0"/>
+<rect x="155" y="560" width="20" height="5" fill="#C0C0C0"/>
+<rect x="155" y="570" width="20" height="5" fill="#C0C0C0"/>
+<rect x="155" y="580" width="20" height="5" fill="#C0C0C0"/>
+
+<!-- Side Mirror -->
+<rect x="430" y="380" width="25" height="15" rx="3" fill="#333333"/>
+<rect x="440" y="385" width="15" height="8" rx="2" fill="#87CEEB"/>
+
+<!-- Door Handle -->
+<rect x="420" y="450" width="15" height="8" rx="4" fill="#C0C0C0"/>
+
+<!-- Background Buildings (Silhouette) -->
+<rect x="0" y="200" width="80" height="300" fill="#4A4A4A" opacity="0.6"/>
+<rect x="1120" y="150" width="80" height="350" fill="#4A4A4A" opacity="0.6"/>
+<rect x="50" y="180" width="60" height="320" fill="#4A4A4A" opacity="0.6"/>
+
+<!-- Title Text -->
+<text x="600" y="100" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#2C5AA0" text-anchor="middle">COMMERCIAL FLEET BRANDING</text>
+<text x="600" y="750" font-family="Arial, sans-serif" font-size="24" fill="#666666" text-anchor="middle">Professional Vehicle Wrapping &amp; Fleet Graphics Solutions</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1060;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B" />
+      <stop offset="100%" style="stop-color:#3B82F6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg2)"/>
+  <!-- Vehicle wrap mockup -->
+  <!-- Car body -->
+  <ellipse cx="400" cy="320" rx="260" ry="55" fill="#1e2a4a" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.5"/>
+  <path d="M 180 290 Q 210 200 310 180 L 490 180 Q 590 200 620 290 Z" fill="#1a2340" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.6"/>
+  <!-- Windows -->
+  <path d="M 260 185 Q 275 215 310 220 L 380 220 L 380 182 Z" fill="#0F172A" stroke="#6366F1" stroke-width="1" stroke-opacity="0.8"/>
+  <path d="M 540 185 Q 525 215 490 220 L 420 220 L 420 182 Z" fill="#0F172A" stroke="#6366F1" stroke-width="1" stroke-opacity="0.8"/>
+  <!-- Wheels -->
+  <circle cx="270" cy="340" r="42" fill="#0F172A" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
+  <circle cx="270" cy="340" r="28" fill="#1e2a4a" stroke="#6366F1" stroke-width="1.5"/>
+  <circle cx="270" cy="340" r="10" fill="#3B82F6" fill-opacity="0.6"/>
+  <circle cx="530" cy="340" r="42" fill="#0F172A" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
+  <circle cx="530" cy="340" r="28" fill="#1e2a4a" stroke="#6366F1" stroke-width="1.5"/>
+  <circle cx="530" cy="340" r="10" fill="#3B82F6" fill-opacity="0.6"/>
+  <!-- Brand text on car -->
+  <text x="400" y="268" font-family="Arial, sans-serif" font-size="28" font-weight="900" text-anchor="middle" fill="url(#g2)">ONE CLICK</text>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#CBD5E8" letter-spacing="4">ADVERTISEMENT · UAE</text>
+  <!-- Decorative stripe -->
+  <line x1="185" y1="305" x2="615" y2="305" stroke="url(#g2)" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- Title -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#3B82F6">VEHICLE FLEET BRANDING</text>
+  <text x="400" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#CBD5E8" fill-opacity="0.7">Full Wraps · Corporate Fleet · Promotional Advertising</text>
+  <line x1="260" y1="118" x2="540" y2="118" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.4"/>
+  <!-- Stars/sparkle -->
+  <text x="90" y="160" font-size="20" fill="#F59E0B" fill-opacity="0.7">✦</text>
+  <text x="700" y="200" font-size="14" fill="#6366F1" fill-opacity="0.8">✦</text>
+  <text x="680" y="420" font-size="24" fill="#3B82F6" fill-opacity="0.5">✦</text>
+</svg>

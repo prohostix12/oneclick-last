@@ -1,0 +1,110 @@
+/* One Click Logo Component Styles */
+
+.oneClickLogo {
+  --logo-primary: #000000;
+  --logo-accent: #e61e25;
+  --logo-border: #333333;
+  --logo-text: #000000;
+  --logo-text-stroke: transparent;
+  --logo-secondary: #666666;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+/* Variant Styles */
+.variant-light {
+  --logo-primary: #ffffff;
+  --logo-accent: #e61e25;
+  --logo-border: #000000;
+  --logo-text: #000000;
+  --logo-text-stroke: transparent;
+  --logo-secondary: #666666;
+}
+
+.variant-dark {
+  --logo-primary: #000000;
+  --logo-accent: #e61e25;
+  --logo-border: #ffffff;
+  --logo-text: #ffffff;
+  --logo-text-stroke: transparent;
+  --logo-secondary: #cccccc;
+}
+
+/* Logo Mark Styles */
+.logoMark {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.oneClickLogo:hover .logoMark {
+  transform: scale(1.05);
+}
+
+/* Brand Text Styles */
+.brandText {
+  transition: all 0.3s ease;
+}
+
+.oneClickLogo:hover .brandText {
+  transform: translateY(-1px);
+}
+
+/* Focus States */
+.oneClickLogo:focus {
+  outline: 2px solid var(--logo-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.oneClickLogo:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .oneClickLogo {
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .oneClickLogo {
+    gap: 6px !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .oneClickLogo {
+    --logo-primary: #ffffff;
+    --logo-accent: #000000;
+    --logo-border: #000000;
+    --logo-text: #000000;
+    --logo-text-stroke: transparent;
+    --logo-secondary: #666666;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .oneClickLogo {
+    --logo-border: currentColor;
+    --logo-text-stroke: currentColor;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .oneClickLogo,
+  .logoMark,
+  .brandText {
+    transition: none;
+  }
+  
+  .oneClickLogo:hover .logoMark,
+  .oneClickLogo:hover .brandText {
+    transform: none;
+  }
+}

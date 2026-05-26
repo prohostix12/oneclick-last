@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Premium Package",
+    "description": "Get exclusive access to premium features",
+    "discount": "30% OFF",
+    "type": "percentage",
+    "color": "#e61e25",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Free Consultation",
+    "description": "Worth 500 - Expert consultation session",
+    "discount": "500% DISCOUNT",
+    "type": "free",
+    "color": "#10b981",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Special Discount",
+    "description": "Limited time offer on all services",
+    "discount": "200% OFF",
+    "type": "fixed",
+    "color": "#3b82f6",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "VIP Access",
+    "description": "Exclusive benefits and priority support",
+    "discount": "50% OFF",
+    "type": "percentage",
+    "color": "#f59e0b",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "Bonus Package",
+    "description": "Extra services included with your purchase",
+    "discount": "25% OFF",
+    "type": "percentage",
+    "color": "#8b5cf6",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "Starter Bundle",
+    "description": "Perfect for new customers - Complete starter package",
+    "discount": "40% OFF",
+    "type": "percentage",
+    "color": "#ec4899",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "title": "Enterprise Deal",
+    "description": "Custom solutions for large organizations",
+    "discount": "60% OFF",
+    "type": "percentage",
+    "color": "#06b6d4",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "title": "Flash Sale",
+    "description": "Limited time - Hurry up and grab this deal",
+    "discount": "45% OFF",
+    "type": "percentage",
+    "color": "#ff6b35",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "title": "Loyalty Reward",
+    "description": "Special offer for our valued customers",
+    "discount": "35% OFF",
+    "type": "percentage",
+    "color": "#00d084",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "title": "Ultimate Package",
+    "description": "Everything you need in one complete solution",
+    "discount": "55% OFF",
+    "type": "percentage",
+    "color": "#7c3aed",
+    "active": true,
+    "createdAt": "2026-04-08T00:00:00.000Z"
+  }
+]

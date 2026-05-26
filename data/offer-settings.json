@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "limit": 100,
+  "expiryDate": "2026-12-31",
+  "offers": [
+    {
+      "id": "2",
+      "title": "Branding Package",
+      "description": "Full corporate identity design",
+      "discount": "OFFER",
+      "color": "#10b981"
+    },
+    {
+      "id": "3",
+      "title": "Advertisement Design",
+      "discount": "OFFER",
+      "description": "Professional billboard design",
+      "color": "#10b981"
+    },
+    {
+      "id": "4",
+      "title": "Expert Consultation",
+      "discount": "OFFER",
+      "description": "One-on-one strategy session",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "1779429159109",
+      "title": "f",
+      "description": "fd",
+      "discount": "fd",
+      "color": "#84cc16"
+    }
+  ]
+}

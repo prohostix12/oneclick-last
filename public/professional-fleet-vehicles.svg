@@ -1,0 +1,120 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="floorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#E8E8E8;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#CCCCCC;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:#999999;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#777777;stop-opacity:1" />
+</linearGradient>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+<feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.2"/>
+</filter>
+</defs>
+
+<!-- Background - Modern Concrete Setting -->
+<rect width="1200" height="400" fill="url(#wallGradient)"/>
+<rect x="0" y="400" width="1200" height="400" fill="url(#floorGradient)"/>
+
+<!-- Concrete Wall Panels -->
+<rect x="0" y="0" width="200" height="400" fill="#888888" stroke="#666666" stroke-width="2"/>
+<rect x="200" y="0" width="200" height="400" fill="#999999" stroke="#666666" stroke-width="2"/>
+<rect x="400" y="0" width="200" height="400" fill="#888888" stroke="#666666" stroke-width="2"/>
+<rect x="600" y="0" width="200" height="400" fill="#999999" stroke="#666666" stroke-width="2"/>
+<rect x="800" y="0" width="200" height="400" fill="#888888" stroke="#666666" stroke-width="2"/>
+<rect x="1000" y="0" width="200" height="400" fill="#999999" stroke="#666666" stroke-width="2"/>
+
+<!-- Floor Grid Lines -->
+<line x1="0" y1="500" x2="1200" y2="500" stroke="#BBBBBB" stroke-width="1"/>
+<line x1="0" y1="600" x2="1200" y2="600" stroke="#BBBBBB" stroke-width="1"/>
+<line x1="0" y1="700" x2="1200" y2="700" stroke="#BBBBBB" stroke-width="1"/>
+
+<!-- Vehicle Shadows -->
+<ellipse cx="200" cy="650" rx="80" ry="15" fill="#000000" opacity="0.2"/>
+<ellipse cx="400" cy="650" rx="90" ry="15" fill="#000000" opacity="0.2"/>
+<ellipse cx="650" cy="650" rx="100" ry="15" fill="#000000" opacity="0.2"/>
+<ellipse cx="950" cy="650" rx="110" ry="15" fill="#000000" opacity="0.2"/>
+
+<!-- Commercial Vehicle 1 - Compact Van -->
+<g filter="url(#shadow)">
+<!-- Body -->
+<rect x="140" y="520" width="120" height="80" rx="8" fill="#FFFFFF"/>
+<rect x="140" y="500" width="120" height="40" rx="15" fill="#FFFFFF"/>
+<!-- Windows -->
+<rect x="150" y="510" width="30" height="25" rx="3" fill="#4A90E2"/>
+<rect x="190" y="510" width="30" height="25" rx="3" fill="#4A90E2"/>
+<rect x="230" y="510" width="20" height="25" rx="3" fill="#4A90E2"/>
+<!-- Wheels -->
+<circle cx="160" cy="620" r="15" fill="#333333"/>
+<circle cx="240" cy="620" r="15" fill="#333333"/>
+<!-- Branding Area -->
+<rect x="150" y="540" width="90" height="40" rx="5" fill="#E61E25"/>
+<text x="195" y="565" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">BRAND</text>
+</g>
+
+<!-- Commercial Vehicle 2 - Medium Van -->
+<g filter="url(#shadow)">
+<!-- Body -->
+<rect x="330" y="510" width="140" height="90" rx="10" fill="#FFFFFF"/>
+<rect x="330" y="490" width="140" height="45" rx="18" fill="#FFFFFF"/>
+<!-- Windows -->
+<rect x="340" y="500" width="35" height="30" rx="4" fill="#4A90E2"/>
+<rect x="385" y="500" width="35" height="30" rx="4" fill="#4A90E2"/>
+<rect x="430" y="500" width="30" height="30" rx="4" fill="#4A90E2"/>
+<!-- Wheels -->
+<circle cx="355" cy="620" r="18" fill="#333333"/>
+<circle cx="445" cy="620" r="18" fill="#333333"/>
+<!-- Branding Area -->
+<rect x="340" y="540" width="110" height="45" rx="6" fill="#E61E25"/>
+<text x="395" y="568" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">YOUR LOGO</text>
+</g>
+
+<!-- Commercial Vehicle 3 - Large Van -->
+<g filter="url(#shadow)">
+<!-- Body -->
+<rect x="550" y="500" width="200" height="100" rx="12" fill="#FFFFFF"/>
+<rect x="550" y="480" width="200" height="50" rx="20" fill="#FFFFFF"/>
+<!-- Windows -->
+<rect x="560" y="490" width="40" height="35" rx="5" fill="#4A90E2"/>
+<rect x="610" y="490" width="40" height="35" rx="5" fill="#4A90E2"/>
+<rect x="660" y="490" width="35" height="35" rx="5" fill="#4A90E2"/>
+<rect x="705" y="490" width="35" height="35" rx="5" fill="#4A90E2"/>
+<!-- Wheels -->
+<circle cx="580" cy="620" r="20" fill="#333333"/>
+<circle cx="720" cy="620" r="20" fill="#333333"/>
+<!-- Branding Area -->
+<rect x="570" y="530" width="160" height="55" rx="8" fill="#E61E25"/>
+<text x="650" y="565" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PREMIUM FLEET</text>
+</g>
+
+<!-- Commercial Vehicle 4 - Delivery Truck -->
+<g filter="url(#shadow)">
+<!-- Body -->
+<rect x="840" y="490" width="220" height="110" rx="15" fill="#FFFFFF"/>
+<rect x="840" y="470" width="220" height="55" rx="22" fill="#FFFFFF"/>
+<!-- Windows -->
+<rect x="850" y="480" width="45" height="40" rx="6" fill="#4A90E2"/>
+<rect x="905" y="480" width="45" height="40" rx="6" fill="#4A90E2"/>
+<rect x="960" y="480" width="40" height="40" rx="6" fill="#4A90E2"/>
+<rect x="1010" y="480" width="40" height="40" rx="6" fill="#4A90E2"/>
+<!-- Wheels -->
+<circle cx="870" cy="620" r="22" fill="#333333"/>
+<circle cx="950" cy="620" r="22" fill="#333333"/>
+<circle cx="1030" cy="620" r="22" fill="#333333"/>
+<!-- Branding Area -->
+<rect x="860" y="530" width="180" height="60" rx="10" fill="#E61E25"/>
+<text x="950" y="570" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">COMMERCIAL</text>
+<text x="950" y="590" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">SOLUTIONS</text>
+</g>
+
+<!-- Professional Lighting Effects -->
+<rect x="0" y="0" width="1200" height="400" fill="url(#wallGradient)" opacity="0.1"/>
+
+<!-- Title Text -->
+<text x="600" y="100" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PROFESSIONAL FLEET BRANDING</text>
+<text x="600" y="140" font-family="Arial, sans-serif" font-size="20" fill="#CCCCCC" text-anchor="middle">Commercial Vehicle Wrapping Solutions</text>
+
+<!-- Bottom Text -->
+<text x="600" y="750" font-family="Arial, sans-serif" font-size="24" fill="#666666" text-anchor="middle">Complete Fleet Graphics &amp; Vehicle Branding Services</text>
+</svg>

@@ -1,0 +1,709 @@
+/* ============================================
+   MOBILE RESPONSIVE FIXES - ENHANCED VERSION
+   ============================================ */
+
+/* Ensure proper viewport handling */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Prevent horizontal scrolling */
+* {
+  box-sizing: border-box;
+}
+
+/* Container responsive fixes */
+.container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  padding-left: clamp(1rem, 4vw, 2rem) !important;
+  padding-right: clamp(1rem, 4vw, 2rem) !important;
+  margin: 0 auto !important;
+  overflow-x: hidden !important;
+}
+
+/* ============================================
+   GLOBAL IMAGE FILL FIXES
+   ============================================ */
+
+/* Portfolio and service card images must always fill containers */
+.portfolio-item img,
+.service-card img,
+.cluster-img,
+.for-brands-image img,
+.prime-locations-image img,
+.we-reach-image img,
+.built-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Navbar and Mobile Menu handled via inline styles in Navbar.tsx for maximum reliability */
+
+
+/* ============================================
+   TABLET RESPONSIVE (768px - 1024px)
+   ============================================ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-section {
+    padding-top: 6rem !important;
+    min-height: 80vh !important;
+    background-color: #111 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  /* === HERO SECTION: Full Fix === */
+  .hero-section {
+    background-color: #111111 !important;
+    height: 100svh !important;
+    height: 100vh !important;
+    min-height: unset !important;
+    padding: 140px 1.5rem 90px !important;
+    text-align: center !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    position: relative !important;
+  }
+
+  /* Background image must fill the entire hero section */
+  .hero-background {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  .hero-background img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* Projects and contact hero sections — same height as services on mobile */
+  .hero-works,
+  .contact-hero {
+    height: 100svh !important;
+    height: 100vh !important;
+    min-height: unset !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  /* Projects page hero background */
+  .hero-works-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  .hero-works-bg img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* Contact page hero background */
+  .contact-hero-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  .contact-hero-bg img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* Overlay must also fill the section */
+  .hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+  }
+
+  /* Content sits on top */
+  .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .hero-section p {
+    font-size: clamp(1rem, 4vw, 1.1rem) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+    padding: 0 1rem !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-section .btn {
+    padding: 1.2rem 2rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Form improvements for mobile - Fix icon overlap */
+  input, textarea, select {
+    font-size: 16px !important;
+    padding: 1rem 1rem 1rem 4rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure proper spacing for form icons on mobile */
+  div[style*="position: relative"] input,
+  div[style*="position: relative"] textarea,
+  div[style*="position: relative"] select {
+    padding-left: 4rem !important;
+  }
+
+  /* Adjust icon positioning for mobile */
+  div[style*="position: relative"] svg {
+    left: 1.2rem !important;
+  }
+
+  /* Grid layouts */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .portfolio-grid,
+  .footer-grid,
+  .for-brands-section,
+  .prime-locations,
+  .we-reach-content,
+  .built-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Cards */
+  .glass-card, .portfolio-item {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+
+  /* Section spacing */
+  .section {
+    padding: 4rem 0 !important;
+  }
+
+  /* Footer mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+
+  .footer-section {
+    text-align: center !important;
+  }
+
+  .social-links {
+    justify-content: center !important;
+  }
+
+  /* Navigation mobile */
+  .navbar {
+    padding: 1rem !important;
+  }
+
+  /* Images responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Tables responsive */
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Modal responsive */
+  .modal-content {
+    width: 95% !important;
+    max-width: 500px !important;
+    margin: 1rem !important;
+  }
+
+  /* Hero Grid Layout on Mobile */
+  .hero-grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-text-side {
+    align-items: center !important;
+    order: 2 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-btn-group {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Hero buttons should be auto width (not stretched) so they sit side by side centered */
+  .hero-btn-group .btn {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0.85rem 1.4rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .hero-globe-side {
+    order: 1 !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Orbit circle scale correction on mobile */
+  .animated-circle-container {
+    scale: 0.88 !important;
+    transform-origin: center !important;
+    margin-bottom: -5.5rem !important; /* Pulls the ATTRACTIVE text up directly below the scaled globe */
+    margin-top: -1rem !important;
+  }
+
+  /* Floating Social Icons Bar on Mobile - Positioning above the Extended Offer starburst claim badge */
+  .floating-social-bar {
+    position: fixed !important;
+    right: 1.25rem !important;
+    bottom: 5.5rem !important; /* Positions vertically directly above the scaled down starburst badge */
+    top: auto !important;
+    transform: none !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    z-index: 999999 !important;
+  }
+
+  .social-icon-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .social-icon-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  /* Extra small mobile devices */
+  .hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+
+  .glass-card {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .glass-card input,
+  .glass-card textarea,
+  .glass-card select {
+    padding: 1rem 1rem 1rem 3.5rem !important;
+    font-size: 16px !important;
+  }
+  
+  .glass-card div[style*="position: relative"] svg {
+    left: 1rem !important;
+  }
+
+  .btn {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Smaller section padding */
+  .section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Smaller headings */
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+  }
+
+  /* Extra small mobile positioning override */
+  .floating-social-bar {
+    bottom: 4.8rem !important;
+    right: 0.8rem !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .nav-link,
+  .nav-btn,
+  .btn,
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .glass-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Register page form fixes for mobile */
+@media (max-width: 768px) {
+  /* Fix register page form input spacing */
+  .glass-card input,
+  .glass-card textarea,
+  .glass-card select {
+    padding: 1rem 1rem 1rem 4rem !important;
+    font-size: 16px !important;
+  }
+  
+  /* Ensure icons don't overlap text */
+  .glass-card div[style*="position: relative"] svg {
+    left: 1.2rem !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 2 !important;
+  }
+  
+  /* Specific fix for textarea icon positioning */
+  .glass-card div[style*="position: relative"] textarea + svg,
+  .glass-card div[style*="position: relative"] svg:first-child {
+    top: 1.2rem !important;
+    transform: none !important;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section,
+  .hero-works,
+  .contact-hero {
+    height: 100svh !important;
+    height: 100vh !important;
+    padding-top: 100px !important;
+  }
+
+  .section {
+    padding: 3rem 0 !important;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+.nav-logo,
+.nav-links,
+.nav-actions {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  /* Reduce motion complexity on mobile for better performance */
+  * {
+    animation-duration: 0.6s !important;
+    transition-duration: 0.6s !important;
+  }
+  
+  /* Disable complex animations on mobile */
+  .bg-orb {
+    display: none !important;
+  }
+  
+  /* Optimize framer-motion animations for mobile */
+  [data-framer-component-type] {
+    will-change: transform, opacity !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+  }
+  
+  /* Reduce animation complexity */
+  .glass-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Optimize button animations */
+  .btn {
+    transition: all 0.6s ease !important;
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.6ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.6ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .glass-card {
+    border: 2px solid currentColor !important;
+  }
+
+  .btn {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .navbar,
+  .nav-actions,
+  .btn,
+  footer {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+  }
+
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES FOR RESPONSIVE
+   ============================================ */
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+/* Responsive text alignment */
+.text-center-mobile {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+/* Responsive spacing */
+.spacing-mobile {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .spacing-mobile {
+    padding: 1rem !important;
+  }
+}
+
+/* ============================================
+   TABS SECTION RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .tabs-content-grid {
+    gap: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs-nav-wrapper {
+    gap: 0.8rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .tabs-nav-item {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    flex: 1 1 auto !important;
+    min-width: 100px !important;
+  }
+
+  .tabs-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    text-align: center !important;
+  }
+
+  .tabs-image-wrapper {
+    height: 300px !important; /* Smaller on mobile */
+    margin-top: 1rem !important;
+    order: -1 !important; /* Image on top of text for mobile */
+  }
+
+  /* Center the "Learn More" links in the tabs content */
+  .tabs-content-grid div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .tabs-content-grid h2 {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-nav-item {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .tabs-image-wrapper {
+    height: 240px !important;
+  }
+
+  .tabs-content-grid h2 {
+    font-size: 2.2rem !important;
+  }
+}

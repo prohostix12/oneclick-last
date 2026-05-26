@@ -1,0 +1,95 @@
+[
+  {
+    "id": "1775974027207",
+    "name": "mmm",
+    "phone": "09746721825",
+    "email": "ha@gmail.com",
+    "businessName": "wsd",
+    "offerWon": "Free Branding Consultation",
+    "offerId": "3",
+    "date": "2026-04-12T06:07:07.207Z",
+    "status": "pending"
+  },
+  {
+    "id": "1775974689745",
+    "name": "mmm",
+    "phone": "09746721825",
+    "email": "ha@gmail.com",
+    "businessName": "wsd",
+    "offerWon": "Advertisement Design",
+    "offerId": "3",
+    "date": "2026-04-12T06:18:09.745Z",
+    "status": "pending"
+  },
+  {
+    "id": "1775974719330",
+    "name": "sandra p",
+    "phone": "09746721825",
+    "email": "ha@gmail.com",
+    "businessName": "abcd",
+    "offerWon": "Free Social Media Design",
+    "offerId": "2",
+    "date": "2026-04-12T06:18:39.330Z",
+    "status": "pending"
+  },
+  {
+    "id": "1776329570355",
+    "name": "archana",
+    "phone": "987654321",
+    "email": "archana@gmail.com",
+    "businessName": "gk",
+    "offerWon": "free - free branding",
+    "date": "2026-04-16T08:52:50.355Z",
+    "status": "pending"
+  },
+  {
+    "id": "1776335099435",
+    "name": "hg",
+    "phone": "987654321",
+    "email": "archana@gmail.com",
+    "businessName": "gfds",
+    "offerWon": "OFFER - Social Media Promotion",
+    "date": "2026-04-16T10:24:59.435Z",
+    "status": "pending"
+  },
+  {
+    "name": "Test",
+    "phone": "+971501234567",
+    "email": "test@test.com",
+    "businessName": "Test Co",
+    "offerWon": "20% OFF - Discount",
+    "date": "2026-05-04T05:07:02.802Z",
+    "status": "pending",
+    "_id": "1777871222845"
+  },
+  {
+    "name": "Prohostix",
+    "phone": "23456787654",
+    "email": "prohostix12@gmail.com",
+    "businessName": "df",
+    "offerWon": "FREE - Expert Consultation",
+    "date": "2026-05-04T05:14:48.580Z",
+    "status": "pending",
+    "_id": "1777871688712"
+  },
+  {
+    "name": "Prohostix",
+    "phone": "9090909090",
+    "email": "prohostix12@gmail.com",
+    "businessName": "jh",
+    "offerWon": "OFFER - Branding Package",
+    "date": "2026-05-04T05:51:53.981Z",
+    "status": "pending",
+    "_id": "1777873913983"
+  },
+  {
+    "name": "ff",
+    "phone": "+919072298603t",
+    "email": "archanaap11p@gmail.com",
+    "businessName": "dd",
+    "offerWon": "fd - f",
+    "date": "2026-05-22T07:13:43.641Z",
+    "status": "pending",
+    "_id": "1779434023658"
+  }
+]
