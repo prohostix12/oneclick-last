@@ -328,12 +328,12 @@ function ProjectsContent() {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    filter: brightness(0.6) contrast(1.1);
+                    filter: brightness(1.1) contrast(0.9) saturate(0.8);
                 }
                 .hero-works-overlay {
                     position: absolute;
                     inset: 0;
-                    background: radial-gradient(circle at center, rgba(30,0,0,0.2) 0%, rgba(12, 12, 12,0.9) 100%);
+                    background: rgba(255, 255, 255, 0.65);
                     z-index: 1;
                 }
                 .hero-works-content {
@@ -345,7 +345,7 @@ function ProjectsContent() {
                 .hero-works-h1 {
                     font-size: clamp(2.5rem, 8vw, 4.5rem);
                     font-weight: 950;
-                    color: white;
+                    color: #111111;
                     letter-spacing: -3px;
                     line-height: 1;
                     margin-bottom: 2rem;
@@ -353,7 +353,7 @@ function ProjectsContent() {
                     word-break: keep-all;
                     overflow-wrap: break-word;
                     transform: translateZ(100px);
-                    text-shadow: 0 15px 50px rgba(12, 12, 12,0.8);
+                    text-shadow: none;
                 }
                 .hero-works-h1 span {
                     color: #e61e25;
@@ -361,14 +361,14 @@ function ProjectsContent() {
                     transform: translateZ(150px);
                 }
                 .hero-works-tagline {
-                    color: rgba(255,255,255,0.9);
+                    color: #333333;
                     font-size: clamp(1.2rem, 4vw, 1.8rem);
                     letter-spacing: 6px;
-                    opacity: 0.9;
+                    opacity: 1;
                     font-weight: 500;
                     text-transform: uppercase;
                     transform: translateZ(60px);
-                    text-shadow: 0 4px 15px rgba(12, 12, 12,0.5);
+                    text-shadow: none;
                 }
                 
                 .section-header {
@@ -435,33 +435,40 @@ function ProjectsContent() {
                     display: grid;
                     grid-template-columns: 1fr 1.5fr;
                     gap: 40px;
-                    margin-bottom: 100px;
                     align-items: center;
-                    contain: layout style paint;
-                    overflow: hidden;
                 }
                 .cluster-text {
-                    background: rgba(255, 255, 255, 0.05);
                     padding: clamp(1.5rem, 5vw, 4rem);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
                     border-radius: 24px;
-                    box-shadow: 0 20px 50px rgba(12, 12, 12,0.2);
-                    color: white;
                     will-change: transform;
                     overflow: hidden;
+                }
+                .cluster-text.dark {
+                    background: #111111;
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+                    color: white;
+                }
+                .cluster-text.light {
+                    background: #ffffff;
+                    border: 1px solid rgba(0, 0, 0, 0.08);
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+                    color: #111111 !important;
                 }
                 .cluster-title {
                     font-size: clamp(1.8rem, 6vw, 3rem);
                     font-weight: 800;
                     margin-bottom: 1.5rem;
                     letter-spacing: -1px;
-                    color: white;
                 }
+                .cluster-text.dark .cluster-title { color: white !important; }
+                .cluster-text.light .cluster-title { color: #111111 !important; }
                 .cluster-desc {
-                    color: rgba(255, 255, 255, 0.7);
                     line-height: 1.8;
                     font-size: 1.05rem;
                 }
+                .cluster-text.dark .cluster-desc { color: rgba(255, 255, 255, 0.7) !important; }
+                .cluster-text.light .cluster-desc { color: #555555 !important; }
                 .cluster-images {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -492,33 +499,26 @@ function ProjectsContent() {
                 .project-overview-bg {
                     position: relative;
                     padding: 160px 0;
-                    background-image: linear-gradient(rgba(12, 12, 12,0.5), rgba(12, 12, 12,0.5)), url('/dubai-hero-building.jpg');
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
+                    background: #ffffff;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     overflow: hidden;
-                    margin-top: 100px;
+                    margin-top: 0;
                 }
                 .project-overview-overlay {
-                    position: absolute;
-                    inset: 0;
-                    background: rgba(12, 12, 12,0.4);
-                    z-index: 1;
+                    display: none;
                 }
                 .project-overview-glass {
                     position: relative;
                     z-index: 2;
                     max-width: 900px;
-                    background: rgba(12, 12, 12, 0.7);
-                    backdrop-filter: blur(30px);
-                    -webkit-backdrop-filter: blur(30px);
+                    background: #111111;
                     padding: 5rem 3rem;
                     border-radius: 32px;
                     text-align: center;
-                    border: 1px solid rgba(255,255,255,0.1);
+                    border: 1px solid rgba(255,255,255,0.08);
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
                 }
                 .cta-btn-pill {
                     display: inline-flex;
@@ -745,8 +745,7 @@ function ProjectsContent() {
                 ))}
             </motion.div>
 
-            <section style={{ paddingBottom: '100px', overflow: 'hidden' }}>
-                <div className="container" style={{ overflow: 'hidden' }}>
+            <section style={{ overflow: 'hidden' }}>
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={filterCategory}
@@ -754,35 +753,29 @@ function ProjectsContent() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -30 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}
                         >
                             {filteredProjects.length > 0 ? (
                                 filteredProjects.map((project, idx) => (
-                                    <motion.div 
-                                        key={project.id || idx} 
-                                        className="project-cluster" 
-                                        style={{ flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse' }}
-                                        initial={{ 
-                                            opacity: 0, 
-                                            y: 20,
-                                            scale: 0.99
+                                    <motion.div
+                                        key={project.id || idx}
+                                        style={{
+                                            background: idx % 2 === 0 ? '#ffffff' : '#1a1a1a',
+                                            padding: '5rem 0',
                                         }}
-                                        whileInView={{ 
-                                            opacity: 1, 
-                                            y: 0,
-                                            scale: 1
-                                        }}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, margin: "-20px" }}
-                                        transition={{ 
-                                            duration: 0.4, 
-                                            delay: idx * 0.05,
-                                            ease: "easeOut"
-                                        }}
+                                        transition={{ duration: 0.4, delay: idx * 0.05, ease: "easeOut" }}
                                     >
-                                        <motion.div 
-                                            className="cluster-text"
-                                            initial={{ 
-                                                opacity: 0, 
+                                        <div className="container">
+                                        <div
+                                            className="project-cluster"
+                                            style={{ flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse' }}
+                                        >
+                                        <motion.div
+                                            className={`cluster-text ${idx % 2 === 0 ? 'dark' : 'light'}`}
+                                            initial={{
+                                                opacity: 0,
                                                 x: idx % 2 === 0 ? -15 : 15,
                                                 scale: 0.99
                                             }}
@@ -798,37 +791,19 @@ function ProjectsContent() {
                                                 ease: "easeOut"
                                             }}
                                         >
-                                            <motion.h2 
+                                            <h2
                                                 className="cluster-title"
-                                                initial={{ opacity: 0, y: 30 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ 
-                                                    duration: 0.8, 
-                                                    delay: Math.min(idx * 0.25, 1.0) + 0.6
-                                                }}
+                                                style={{ color: idx % 2 === 0 ? '#ffffff' : '#111111' }}
                                             >
                                                 {project.title}
-                                            </motion.h2>
-                                            <motion.p
+                                            </h2>
+                                            <p
                                                 className="cluster-desc"
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{
-                                                    duration: 0.8,
-                                                    delay: Math.min(idx * 0.25, 1.0) + 0.8
-                                                }}
+                                                style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.75)' : '#444444' }}
                                             >
                                                 {project.description}
-                                            </motion.p>
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 15 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 0.6, delay: Math.min(idx * 0.25, 1.0) + 1.0 }}
-                                                style={{ marginTop: '1.8rem' }}
-                                            >
+                                            </p>
+                                            <div style={{ marginTop: '1.8rem' }}>
                                                 <button
                                                     onClick={() => setEnquireProject(project.title)}
                                                     style={{
@@ -849,7 +824,7 @@ function ProjectsContent() {
                                                 >
                                                     Enquire Now
                                                 </button>
-                                            </motion.div>
+                                            </div>
                                         </motion.div>
                                         <motion.div 
                                             className={`cluster-images ${project.images.length === 1 ? 'single' : ''} ${project.isSmall ? 'small' : ''}`}
@@ -907,6 +882,8 @@ function ProjectsContent() {
                                                 </div>
                                             )}
                                         </motion.div>
+                                        </div>
+                                        </div>
                                     </motion.div>
                                 ))
                             ) : (
@@ -917,7 +894,6 @@ function ProjectsContent() {
                             )}
                         </motion.div>
                     </AnimatePresence>
-                </div>
             </section>
 
             <section className="project-overview-bg">
@@ -930,7 +906,7 @@ function ProjectsContent() {
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                     <motion.h2 
-                        style={{ fontSize: '2.8rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', letterSpacing: '-1px' }}
+                        style={{ fontSize: '2.8rem', fontWeight: 900, color: '#ffffff', marginBottom: '1.5rem', letterSpacing: '-1px' }}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -939,7 +915,7 @@ function ProjectsContent() {
                         Project Overview
                     </motion.h2>
                     <motion.p 
-                        style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '750px', margin: '0 auto', fontWeight: 500 }}
+                        style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '750px', margin: '0 auto', fontWeight: 500 }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}

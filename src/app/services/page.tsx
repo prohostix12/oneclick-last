@@ -289,13 +289,13 @@ export default function ServicesPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: brightness(0.6) contrast(1.1);
+          filter: brightness(1.1) contrast(0.9) saturate(0.8);
         }
 
         .hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(30,0,0,0.15) 0%, rgba(12, 12, 12,0.85) 100%);
+          background: rgba(255, 255, 255, 0.72);
           z-index: 1;
         }
 
@@ -317,27 +317,27 @@ export default function ServicesPage() {
           line-height: 1.05;
           margin-bottom: 1.5rem;
           letter-spacing: -2px;
-          color: white;
+          color: #111111;
           word-break: keep-all;
           overflow-wrap: break-word;
           transform: translateZ(100px);
-          text-shadow: 0 15px 40px rgba(12, 12, 12,0.8);
+          text-shadow: none;
         }
 
         .hero-title .highlight {
           color: #e61e25;
           display: inline-block;
           transform: translateZ(150px);
-          text-shadow: 0 0 30px rgba(230,30,37,0.6);
+          text-shadow: none;
         }
 
         .hero-subtitle {
           font-size: clamp(1rem, 2vw, 1.3rem);
-          color: rgba(255,255,255,0.95);
+          color: #444444;
           max-width: 600px;
           margin: 0 auto 2rem auto;
           line-height: 1.6;
-          text-shadow: 0 4px 15px rgba(12, 12, 12,0.6);
+          text-shadow: none;
           transform: translateZ(60px);
           font-weight: 500;
         }
@@ -486,9 +486,8 @@ export default function ServicesPage() {
 
         .why-choose-section {
           padding: 8rem 1.5rem;
-          background: transparent;
-          backdrop-filter: blur(10px);
-          color: white;
+          background: #ffffff;
+          color: #111111;
         }
 
         .why-choose-container {
@@ -505,11 +504,11 @@ export default function ServicesPage() {
           font-weight: 900;
           margin-bottom: 1.5rem;
           line-height: 1.2;
-          color: white;
+          color: #111111;
         }
 
         .why-choose-content p {
-          color: rgba(255, 255, 255, 0.7);
+          color: #666666;
           font-size: 1rem;
           line-height: 1.6;
           margin-bottom: 2rem;
@@ -522,10 +521,10 @@ export default function ServicesPage() {
         }
 
         .accordion-item {
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(0, 0, 0, 0.1);
           border-radius: 12px;
           overflow: hidden;
-          background: rgba(255, 255, 255, 0.05);
+          background: #f5f5f5;
           transition: all 0.6s ease;
         }
 
@@ -542,7 +541,7 @@ export default function ServicesPage() {
           cursor: pointer;
           font-weight: 600;
           font-size: 1.1rem;
-          color: white;
+          color: #111111;
           transition: all 0.6s ease;
         }
 
@@ -970,11 +969,11 @@ export default function ServicesPage() {
                       delay: i * 0.15,
                       ease: "easeOut"
                     }}
-                    style={{ 
-                      display: 'flex', 
-                      gap: '1.2rem', 
+                    style={{
+                      display: 'flex',
+                      gap: '1.2rem',
                       alignItems: 'flex-start',
-                      background: 'rgba(255,255,255,0.03)',
+                      background: '#f5f5f5',
                       padding: '1.2rem',
                       borderRadius: '12px',
                       borderLeft: '4px solid #e61e25'
@@ -988,8 +987,8 @@ export default function ServicesPage() {
                       marginTop: '6px' 
                     }}></div>
                     <div>
-                      <div style={{ fontWeight: 800, fontSize: '1.1rem', marginBottom: '0.4rem', color: 'white' }}>{point.title}</div>
-                      <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.4' }}>{point.desc}</div>
+                      <div style={{ fontWeight: 800, fontSize: '1.1rem', marginBottom: '0.4rem', color: '#111111' }}>{point.title}</div>
+                      <div style={{ fontSize: '0.95rem', color: '#666666', lineHeight: '1.4' }}>{point.desc}</div>
                     </div>
                   </motion.div>
                 ))}

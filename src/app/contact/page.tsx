@@ -138,20 +138,20 @@ export default function ContactPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: brightness(0.6) contrast(1.1);
+          filter: brightness(1.1) contrast(0.9) saturate(0.8);
         }
 
         .contact-hero-overlay {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle at 70% 50%, rgba(30,0,0,0.1) 0%, rgba(12, 12, 12,0.9) 100%);
+          background: rgba(255, 255, 255, 0.72);
           z-index: 1;
         }
 
         .contact-hero-content {
           position: relative;
           z-index: 5;
-          color: white;
+          color: #111111;
           width: 100%;
           display: flex;
           justify-content: space-between;
@@ -183,11 +183,12 @@ export default function ContactPage() {
           letter-spacing: -1px;
           margin-bottom: 0;
           text-transform: none;
+          color: #111111;
         }
 
         .contact-hero-text {
           font-size: 1.15rem;
-          color: rgba(255,255,255,0.9);
+          color: #444444;
           line-height: 1.7;
           font-weight: 400;
           text-transform: none;
@@ -318,9 +319,9 @@ export default function ContactPage() {
 
         /* Form Section */
         .campaign-section {
-          background: #121212;
-          padding: 8rem 2rem;
-          color: white;
+          background: #ffffff;
+          padding: 4rem 2rem;
+          color: #111111;
           text-align: center;
         }
 
@@ -329,25 +330,29 @@ export default function ContactPage() {
           font-weight: 800;
           margin-bottom: 0.5rem;
           line-height: 1;
+          color: #111111;
+          font-style: normal !important;
+          font-family: inherit !important;
         }
 
-        .campaign-title .italic {
-          font-style: italic;
-          font-weight: 400;
-          color: #e61e25;
+        .campaign-title h2 span {
+          font-style: normal !important;
+          font-family: inherit !important;
+          font-weight: 800 !important;
         }
+
 
         .campaign-subtitle {
           font-size: 1.1rem;
-          color: rgba(255,255,255,0.6);
-          margin-bottom: 4rem;
+          color: #666666;
+          margin-bottom: 2rem;
         }
 
         .form-wrapper {
           max-width: 600px;
           margin: 0 auto;
-          padding: 3rem 2.5rem;
-          background: rgba(15, 15, 15, 0.4);
+          padding: 1.8rem 2rem;
+          background: #111111;
           backdrop-filter: blur(20px);
           border: 1px solid rgba(230, 30, 37, 0.2);
           border-radius: 20px;
@@ -357,12 +362,12 @@ export default function ContactPage() {
         .contact-form {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.6rem;
         }
 
         .form-input, .form-select, .form-textarea {
           width: 100%;
-          padding: 1rem 1.2rem;
+          padding: 0.7rem 1rem;
           background: #000;
           border: 1px solid rgba(255,255,255,0.15);
           border-radius: 4px;
@@ -687,7 +692,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2>Send us a <span className="italic">message</span></h2>
+            <h2>Send us a <span style={{ color: '#e61e25', fontStyle: 'normal', fontFamily: 'inherit', fontWeight: 'inherit' }}>message</span></h2>
             <p className="campaign-subtitle">Tell us what you're looking for and we'll get back to you quickly</p>
           </motion.div>
 
@@ -773,7 +778,7 @@ export default function ContactPage() {
                   <textarea
                     placeholder="Message"
                     className="form-textarea"
-                    style={{ minHeight: 120 }}
+                    style={{ minHeight: 80 }}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required

@@ -148,9 +148,8 @@ export default function Home() {
     setIsAdmin(isAdminUser);
     setMounted(true);
     setVideoEnded(true);
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 400);
+    setShowContent(true);
+    const timer = setTimeout(() => {}, 0);
 
     fetch('/api/offer-settings')
       .then(r => r.json())
@@ -305,17 +304,15 @@ export default function Home() {
 
         <motion.div
           className="hero-content hero-split"
-          initial={isAdmin ? { opacity: 1 } : { opacity: 0, y: 60 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={isAdmin ? { duration: 0 } : { duration: 0.9, type: 'spring', bounce: 0.25 }}
         >
           {/* ── LEFT: Text ── */}
           <div className="hero-text-side">
             <motion.h1
               className="hero-headline"
-              initial={isAdmin ? { opacity: 1 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.7, type: 'spring', bounce: 0.3 }}
             >
               We Make<br />
               <span className="hero-headline-accent">Brands Visible</span>
@@ -323,11 +320,18 @@ export default function Home() {
 
 
 
+            <motion.p
+              className="hero-sub"
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              From signage to vehicle branding, we craft visuals that get your business noticed — across every UAE city.
+            </motion.p>
+
             <motion.div
               className="hero-cta-row"
-              initial={isAdmin ? { opacity: 1 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.6 }}
             >
               <Link href="/services" className="btn btn-primary">
                 Explore Services <ArrowRight size={18} />
@@ -376,9 +380,8 @@ export default function Home() {
         {/* Floating Social Icons Bar on Right Side of Landing Page */}
         <motion.div 
           className="floating-social-bar"
-          initial={isAdmin ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-          animate={(showContent || isAdmin) ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-          transition={isAdmin ? { duration: 0 } : { delay: showContent ? 1.0 : 0, duration: 0.8 }}
+          initial={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
         >
           <a href="https://www.instagram.com/oneclick_advertisement?igsh=NzNwaGo2b2VwbDNh" target="_blank" rel="noopener noreferrer" className="social-icon-btn instagram" aria-label="Instagram">
             <Instagram size={22} />
@@ -547,7 +550,8 @@ export default function Home() {
             fontSize: 'clamp(2.5rem, 8vw, 4rem)',
             letterSpacing: '-1px',
             textTransform: 'uppercase',
-            lineHeight: 1.1
+            lineHeight: 1.1,
+            color: '#111111'
           }}>
             We build <span style={{
               color: '#e61e25',
@@ -565,7 +569,7 @@ export default function Home() {
                 id: 1, 
                 icon: <MapPin size={32} color="#e61e25" />, 
                 title: 'Branding & Corporate Identity',
-                desc: 'We’ll help you create a look that people remember. (Like that local cafe everyone knows by its logo.)',
+                desc: "We'll help you create a look that people remember. (Like that local cafe everyone knows by its logo.)",
                 image: '/signage-branding.png'
               },
               { 
@@ -867,7 +871,7 @@ export default function Home() {
           >
             <h2>Right where your customers are</h2>
             <p>
-              We’ve picked the best spots in high-traffic areas to make sure people see your brand. From the busiest streets in Dubai to the main hubs in Abu Dhabi, we’ve got the UAE covered.
+              We've picked the best spots in high-traffic areas to make sure people see your brand. From the busiest streets in Dubai to the main hubs in Abu Dhabi, we've got the UAE covered.
             </p>
           </motion.div>
         </motion.div>
@@ -890,9 +894,9 @@ export default function Home() {
             variants={swipeLeft}
             whileHover={{ x: 5, transition: { duration: 0.6 } }}
           >
-            <h2>We’re all over the city</h2>
+            <h2>We're all over the city</h2>
             <p>
-              With teams in Dubai, Abu Dhabi, and across the UAE, we’re ready to help you reach your customers wherever they are.
+              With teams in Dubai, Abu Dhabi, and across the UAE, we're ready to help you reach your customers wherever they are.
             </p>
             <Link href="/contact" className="btn btn-primary">
               Let's chat <ArrowRight size={20} />
@@ -912,7 +916,7 @@ export default function Home() {
       </section>
 
       {/* Tabbed Section - Why Us, Reach, Solutions */}
-      <section className="section" style={{ background: 'rgba(12, 12, 12, 0.9)', backdropFilter: 'blur(10px)', padding: 'clamp(4rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem)' }}>
+      <section className="section" style={{ background: '#ffffff', padding: 'clamp(4rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem)' }}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -1003,30 +1007,30 @@ export default function Home() {
             {activeTab === 'whyus' && (
               <>
                 <div>
-                  <h2 style={{ 
-                    fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-                    fontWeight: 900, 
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    fontWeight: 900,
                     marginBottom: '1.5rem',
                     lineHeight: 1.2,
-                    color: 'white'
+                    color: '#111111'
                   }}>
                     Get Seen
                   </h2>
-                  <p style={{ 
-                    color: 'rgba(255, 255, 255, 0.8)', 
-                    fontSize: '1.1rem', 
+                  <p style={{
+                    color: '#666666',
+                    fontSize: '1.1rem',
                     lineHeight: 1.8,
                     marginBottom: '2rem'
                   }}>
-                    We’re here to help you get your business in front of the right people. We design, print, and install high-quality ads that people actually notice while they're out and about. No stress, no confusion.
+                    We're here to help you get your business in front of the right people. We design, print, and install high-quality ads that people actually notice while they're out and about. No stress, no confusion.
                   </p>
-                  <Link 
-                    href="/about" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
+                  <Link
+                    href="/about"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
                       gap: '0.5rem',
-                      color: 'white',
+                      color: '#111111',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: '1rem',
@@ -1050,30 +1054,30 @@ export default function Home() {
             {activeTab === 'reach' && (
               <>
                 <div>
-                  <h2 style={{ 
-                    fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-                    fontWeight: 900, 
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    fontWeight: 900,
                     marginBottom: '1.5rem',
                     lineHeight: 1.2,
-                    color: 'white'
+                    color: '#111111'
                   }}>
-                    We’ve got the UAE covered
+                    We've got the UAE covered
                   </h2>
-                  <p style={{ 
-                    color: 'rgba(255, 255, 255, 0.8)', 
-                    fontSize: '1.1rem', 
+                  <p style={{
+                    color: '#666666',
+                    fontSize: '1.1rem',
                     lineHeight: 1.8,
                     marginBottom: '2rem'
                   }}>
-                    Whether you're looking to reach people on the main streets of Dubai or in the business hubs of Abu Dhabi, we’ve got spots in all seven emirates. Your message goes exactly where it needs to be.
+                    Whether you're looking to reach people on the main streets of Dubai or in the business hubs of Abu Dhabi, we've got spots in all seven emirates. Your message goes exactly where it needs to be.
                   </p>
-                  <Link 
-                    href="/contact" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
+                  <Link
+                    href="/contact"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
                       gap: '0.5rem',
-                      color: 'white',
+                      color: '#111111',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: '1rem',
@@ -1097,30 +1101,30 @@ export default function Home() {
             {activeTab === 'solutions' && (
               <>
                 <div>
-                  <h2 style={{ 
-                    fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-                    fontWeight: 900, 
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    fontWeight: 900,
                     marginBottom: '1.5rem',
                     lineHeight: 1.2,
-                    color: 'white'
+                    color: '#111111'
                   }}>
                     Everything you need
                   </h2>
-                  <p style={{ 
-                    color: 'rgba(255, 255, 255, 0.8)', 
-                    fontSize: '1.1rem', 
+                  <p style={{
+                    color: '#666666',
+                    fontSize: '1.1rem',
                     lineHeight: 1.8,
                     marginBottom: '2rem'
                   }}>
                     From the first sketch to the final install, we handle it all. Branding, printing, vehicle wraps, and signs—we make sure your business looks professional and gets noticed.
                   </p>
-                  <Link 
-                    href="/services" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
+                  <Link
+                    href="/services"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
                       gap: '0.5rem',
-                      color: 'white',
+                      color: '#111111',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: '1rem',

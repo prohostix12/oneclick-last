@@ -149,13 +149,13 @@ export default function AboutPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: brightness(0.6) contrast(1.1);
+          filter: brightness(1.05) contrast(0.95) saturate(0.85);
         }
 
         .hero-overlay {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle at center, rgba(10,0,0,0.4) 0%, rgba(18, 18, 18,0.95) 100%);
+          background: rgba(255, 255, 255, 0.80);
           z-index: 1;
         }
 
@@ -176,25 +176,26 @@ export default function AboutPage() {
           margin-bottom: 2rem;
           letter-spacing: -3px;
           transform: translateZ(80px);
-          text-shadow: 0 10px 40px rgba(12, 12, 12,0.6);
+          text-shadow: none;
+          color: #111111;
         }
 
         .hero-title span {
           color: #e61e25;
           display: inline-block;
           transform: translateZ(120px);
-          text-shadow: 0 0 30px rgba(230,30,37,0.5);
+          text-shadow: none;
         }
 
         .hero-desc {
           font-size: 1.4rem;
-          color: rgba(255,255,255,0.95);
+          color: #000000;
           max-width: 750px;
           margin: 0 auto;
           line-height: 1.6;
-          text-shadow: 0 4px 15px rgba(12, 12, 12,0.5);
+          text-shadow: 0 1px 3px rgba(255,255,255,0.8);
           transform: translateZ(40px);
-          font-weight: 500;
+          font-weight: 800;
         }
 
         .content-section {
@@ -218,12 +219,13 @@ export default function AboutPage() {
           margin-bottom: 1.5rem;
           line-height: 1.1;
           letter-spacing: -1px;
+          color: #111111;
         }
 
         .profile-text p {
           font-size: 1.05rem;
           line-height: 1.7;
-          color: rgba(255,255,255,0.75);
+          color: #555555;
           margin-bottom: 1.5rem;
         }
 
@@ -252,15 +254,15 @@ export default function AboutPage() {
         .vm-card {
           padding: 2.5rem;
           border-radius: 20px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: #f5f5f5;
+          border: 1px solid rgba(0,0,0,0.08);
           transition: all 0.6s ease;
-          color: white;
+          color: #111111;
         }
 
         .vm-card:hover {
-          background: rgba(230,30,37,0.06);
-          box-shadow: 0 20px 40px rgba(12, 12, 12,0.4);
+          background: rgba(230,30,37,0.04);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
           border-color: #e61e25;
           transform: translateY(-8px);
         }
@@ -281,7 +283,7 @@ export default function AboutPage() {
         .vm-card p {
           font-size: 1rem;
           line-height: 1.6;
-          color: rgba(255,255,255,0.7);
+          color: #666666;
         }
 
         .services-summary-grid {
@@ -293,13 +295,12 @@ export default function AboutPage() {
         }
 
         .service-summary-card {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(12px);
+          background: rgba(255,255,255,0.05);
           padding: 2.5rem;
           border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255,255,255,0.1);
           transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-          color: white;
+          color: #ffffff;
           position: relative;
           z-index: 2;
         }
@@ -318,7 +319,7 @@ export default function AboutPage() {
         }
 
         .service-summary-card p {
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255,255,255,0.7);
           line-height: 1.6;
           margin-bottom: 0;
           font-size: 0.95rem;
@@ -335,9 +336,10 @@ export default function AboutPage() {
         }
 
         .process-section {
-          background: #121212;
+          background: #ffffff;
           padding: 8rem 2rem;
           text-align: center;
+          color: #111111;
         }
 
         .section-header {
@@ -355,7 +357,7 @@ export default function AboutPage() {
 
         .section-header h2 .italic {
           font-style: italic;
-          color: rgba(255,255,255,0.6);
+          color: rgba(0,0,0,0.35);
           font-weight: 400;
           margin-left: 10px;
         }
@@ -418,10 +420,10 @@ export default function AboutPage() {
         }
 
         .process-step {
-          background: #141414;
+          background: #f5f5f5;
           padding: 2.5rem 1.5rem;
           border-radius: 12px;
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(0,0,0,0.08);
           transition: all 0.6s ease;
           text-align: left;
           min-height: 280px;
@@ -430,14 +432,14 @@ export default function AboutPage() {
           position: relative;
           overflow: hidden;
           z-index: 2;
-          color: white;
+          color: #111111;
         }
 
         .process-step:hover {
           border-color: #e61e25;
-          box-shadow: 0 15px 40px rgba(12, 12, 12,0.4);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.1);
           transform: translateY(-8px);
-          background: #1f1111;
+          background: #fff5f5;
         }
 
         .step-header {
@@ -450,13 +452,13 @@ export default function AboutPage() {
         .step-icon-box {
           width: 50px;
           height: 50px;
-          background: rgba(255,255,255,0.08);
-          color: white;
+          background: rgba(230,30,37,0.1);
+          color: #e61e25;
           display: flex;
           align-items: center;
           justify-content: center;
           border-radius: 8px;
-          border: 1px solid rgba(255,255,255,0.1);
+          border: 1px solid rgba(230,30,37,0.2);
           transition: border-color 0.3s ease;
         }
 
@@ -467,11 +469,11 @@ export default function AboutPage() {
         .process-step h4 {
           font-size: 1.8rem;
           font-weight: 700;
-          color: white;
+          color: #111111;
         }
 
         .process-step p {
-          color: rgba(255,255,255,0.7);
+          color: #666666;
           line-height: 1.5;
           font-size: 1.05rem;
         }
@@ -524,8 +526,8 @@ export default function AboutPage() {
 
         .industries-section {
           padding: 8rem 2rem;
-          background: #121212;
-          color: white;
+          background: #ffffff;
+          color: #111111;
         }
 
         .industries-grid {
@@ -536,20 +538,20 @@ export default function AboutPage() {
 
         .industry-card {
           padding: 2rem;
-          background: rgba(255,255,255,0.04);
+          background: #f5f5f5;
           border-radius: 20px;
           display: flex;
           align-items: center;
           gap: 15px;
           transition: all 0.6s ease;
-          border: 1px solid rgba(255,255,255,0.08);
-          color: white;
+          border: 1px solid rgba(0,0,0,0.08);
+          color: #111111;
         }
 
         .industry-card:hover {
-          background: rgba(230,30,37,0.08);
+          background: rgba(230,30,37,0.05);
           border-color: #e61e25;
-          box-shadow: 0 15px 30px rgba(12, 12, 12,0.3);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
           transform: translateY(-8px);
         }
 
@@ -674,9 +676,9 @@ export default function AboutPage() {
             className="hero-background"
             style={{ x: bgX, y: bgY }}
           >
-            <img 
-              src="/services-hero-bg.png" 
-              alt="About Us Background" 
+            <img
+              src="/about-hero-bg.png"
+              alt="About Us Background"
             />
           </motion.div>
           <div className="hero-overlay"></div>
@@ -717,8 +719,8 @@ export default function AboutPage() {
         </section>
 
         {/* Company Profile & About Us */}
-        <section className="content-section">
-          <div className="profile-grid">
+        <section className="content-section" style={{ background: '#ffffff', maxWidth: '100%', padding: '5rem 2rem' }}>
+          <div className="profile-grid" style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div 
               className="profile-text"
               initial="hidden"
@@ -726,7 +728,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeInUp}>A bit about us</motion.h2>
+              <motion.h2 variants={fadeInUp} style={{ color: '#e61e25' }}>A bit about us</motion.h2>
               <motion.p variants={fadeInUp}>
                 We’re here to help you get your business in front of the right people. We design, print, and install high-quality ads that people actually notice while they're out and about.
               </motion.p>
@@ -775,17 +777,14 @@ export default function AboutPage() {
         </section>
 
         {/* Core Services Summary */}
-        <section className="content-section" style={{ 
+        <section className="content-section" style={{
           position: 'relative',
           padding: '8rem 2rem',
-          background: 'linear-gradient(rgba(12, 12, 12,0.85), rgba(12, 12, 12,0.85)), url(https://images.unsplash.com/photo-1549216348-12c85f7ea368?q=80&w=2070&auto=format&fit=crop)',
-          backgroundSize: 'cover',
-          backgroundAttachment: 'fixed',
-          backgroundPosition: 'center',
-          color: 'white',
-          borderTop: '1px solid rgba(255,255,255,0.1)'
+          background: '#111111',
+          color: '#ffffff',
+          borderTop: '1px solid rgba(255,255,255,0.06)'
         }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(230,30,37,0.1) 0%, transparent 80%)', pointerEvents: 'none' }}></div>
+          <div style={{ display: 'none' }}></div>
           <motion.div 
             className="section-header"
             initial="hidden"
@@ -793,8 +792,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 style={{ fontSize: '2.5rem' }}>Our Core <span className="italic" style={{ color: '#e61e25', fontStyle: 'italic', fontWeight: 'inherit' }}>Services</span></h2>
-            <p style={{ fontWeight: 400 }}>Comprehensive branding and signage solutions tailored for the UAE market.</p>
+            <h2 style={{ fontSize: '2.5rem', color: '#ffffff' }}>Our Core <span style={{ color: '#e61e25' }}>Services</span></h2>
+            <p style={{ fontWeight: 400, color: 'rgba(255,255,255,0.7)' }}>Comprehensive branding and signage solutions tailored for the UAE market.</p>
           </motion.div>
 
           <motion.div 
@@ -822,7 +821,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2>How we <span className="italic">work</span></h2>
+            <h2>How we <span style={{ color: '#e61e25', fontStyle: 'normal', fontWeight: 900 }}>work</span></h2>
             <p>A simple and stress-free way to get your brand noticed.</p>
             <div className="steps-label">Easy Steps</div>
           </motion.div>
@@ -898,7 +897,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2>Industries <span className="italic">We Serve</span></h2>
+            <h2>Industries <span style={{ fontStyle: 'normal', color: '#e61e25', fontWeight: 900 }}>We Serve</span></h2>
             <p>Providing specialized visual solutions across diverse sectors in the UAE.</p>
           </motion.div>
 
