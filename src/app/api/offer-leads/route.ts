@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDatabase } from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
+import { sendOfferLeadNotificationEmail } from '@/lib/sendLeadEmail';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -34,6 +35,12 @@ export async function POST(request: NextRequest) {
 
     const db = await getDatabase();
     const result = await db.collection('offer_leads').insertOne(newLead);
+
+    // Fire-and-forget email — don't block the response
+    sendOfferLeadNotificationEmail(newLead).catch(err =>
+      console.error('Offer lead email notification failed:', err)
+    );
+
     return NextResponse.json({ success: true, data: { ...newLead, id: result.insertedId } });
   } catch (error) {
     console.error('Error saving lead:', error);

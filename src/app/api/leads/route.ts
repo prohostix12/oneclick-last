@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDatabase } from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
+import { sendLeadNotificationEmail } from '@/lib/sendLeadEmail';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -65,9 +66,17 @@ export async function POST(request: NextRequest) {
         { emailLower: email.toLowerCase() },
         { $set: { ...leadData, updatedAt: new Date().toISOString() } }
       );
+      // Fire-and-forget email — don't block the response
+      sendLeadNotificationEmail({ ...leadData }).catch(err =>
+        console.error('Lead email notification failed:', err)
+      );
       return NextResponse.json({ success: true, message: 'Lead updated', leadId: existingLead._id, isUpdate: true });
     } else {
       const result = await leadsCollection.insertOne(leadData);
+      // Fire-and-forget email — don't block the response
+      sendLeadNotificationEmail({ ...leadData }).catch(err =>
+        console.error('Lead email notification failed:', err)
+      );
       return NextResponse.json({ success: true, message: 'Lead captured', leadId: result.insertedId, isUpdate: false });
     }
 

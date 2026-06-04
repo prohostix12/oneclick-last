@@ -914,8 +914,8 @@ export default function LeadsPage() {
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 12px;
           width: 100%;
-          max-width: 600px;
-          max-height: 80vh;
+          max-width: 560px;
+          max-height: 55vh;
           overflow-y: auto;
         }
 
@@ -923,13 +923,13 @@ export default function LeadsPage() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 1.5rem;
+          padding: 0.9rem 1.25rem;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .modal-header h2 {
           color: white;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 700;
         }
 
@@ -939,34 +939,36 @@ export default function LeadsPage() {
           color: rgba(255, 255, 255, 0.7);
           font-size: 1.5rem;
           cursor: pointer;
-          padding: 0.5rem;
+          padding: 0.25rem 0.5rem;
         }
 
         .modal-body {
-          padding: 1.5rem;
+          padding: 1rem 1.25rem;
         }
 
         .detail-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 1.5rem;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 0.85rem;
         }
 
         .detail-item {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.2rem;
         }
 
         .detail-item label {
           font-weight: 600;
           color: rgba(255, 255, 255, 0.7);
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .detail-item span {
           color: white;
-          font-size: 1rem;
+          font-size: 0.95rem;
         }
 
         /* Mobile Responsive */
