@@ -65,9 +65,8 @@ export async function sendLeadNotificationEmail(lead: LeadData) {
 
   const { transporter, fromEmail, toEmail } = mailConfig;
 
-  const submittedAt = new Date(lead.submittedAt || new Date()).toLocaleString('en-US', {
+  const submittedAt = new Date(lead.submittedAt || new Date()).toLocaleDateString('en-US', {
     dateStyle: 'medium',
-    timeStyle: 'short',
   });
 
   const html = `
@@ -135,9 +134,8 @@ export async function sendContactNotificationEmail(contact: ContactData) {
 
   const { transporter, fromEmail, toEmail } = mailConfig;
 
-  const sentAt = new Date(contact.createdAt || new Date()).toLocaleString('en-US', {
+  const sentAt = new Date(contact.createdAt || new Date()).toLocaleDateString('en-US', {
     dateStyle: 'medium',
-    timeStyle: 'short',
   });
 
   const html = `
@@ -215,9 +213,8 @@ export async function sendOfferLeadNotificationEmail(offerLead: OfferLeadData) {
 
   const { transporter, fromEmail, toEmail } = mailConfig;
 
-  const claimedAt = new Date(offerLead.date || new Date()).toLocaleString('en-US', {
+  const claimedAt = new Date(offerLead.date || new Date()).toLocaleDateString('en-US', {
     dateStyle: 'medium',
-    timeStyle: 'short',
   });
 
   const html = `
