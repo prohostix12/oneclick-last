@@ -14,6 +14,8 @@ interface ContactData {
   name: string;
   email: string;
   phone?: string | null;
+  company?: string | null;
+  service?: string | null;
   message: string;
   createdAt?: string;
 }
@@ -160,6 +162,27 @@ export async function sendContactNotificationEmail(contact: ContactData) {
             <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Phone</td>
             <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 600;">
               ${contact.phone ? `<a href="tel:${contact.phone}" style="color: #e61e25;">${contact.phone}</a>` : 'Not provided'}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Company</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 600;">${contact.company || 'Not provided'}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Requested Service</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 600;">
+              ${
+                contact.service 
+                  ? {
+                      branding: 'Branding & Corporate Identity',
+                      'digital-graphics': 'Digital Printed Graphics',
+                      'vehicle-graphics': 'Vehicle Graphics & Fleet Branding',
+                      signage: 'Exhibition, Display & POS Solutions',
+                      exhibition: 'Signage Production & Installation',
+                      cladding: 'Cladding & Facade Solutions'
+                    }[contact.service] || contact.service
+                  : 'Not provided'
+              }
             </td>
           </tr>
           <tr>

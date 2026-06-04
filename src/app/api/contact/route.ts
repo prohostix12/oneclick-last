@@ -9,13 +9,21 @@ export const revalidate = 0;
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { name, email, phone, message } = body;
+        const { name, email, phone, message, company, service } = body;
 
         if (!name || !email || !message) {
             return NextResponse.json({ error: 'Name, email, and message are required fields.' }, { status: 400 });
         }
 
-        const entry = { name, email, phone: phone || null, message, createdAt: new Date().toISOString() };
+        const entry = { 
+            name, 
+            email, 
+            phone: phone || null, 
+            message, 
+            company: company || null, 
+            service: service || null, 
+            createdAt: new Date().toISOString() 
+        };
 
         const db = await getDatabase();
         const result = await db.collection('contacts').insertOne(entry);
