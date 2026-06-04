@@ -706,8 +706,8 @@ export default function ContactPage() {
                 <div style={{ background: '#22c55e', width: 60, height: 60, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
-                <h3>Request Submitted!</h3>
-                <p>Thank you. Our experts will contact you shortly.</p>
+                <h3 style={{ color: 'white', fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Request Submitted!</h3>
+                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.05rem' }}>Thank you. Our experts will contact you shortly.</p>
                 <button onClick={() => setSubmitStatus(null)} className="submit-button" style={{ marginTop: '1.5rem' }}>Send Another</button>
               </motion.div>
             ) : (
