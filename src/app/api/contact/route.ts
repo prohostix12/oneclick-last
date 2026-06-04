@@ -28,10 +28,11 @@ export async function POST(req: Request) {
         const db = await getDatabase();
         const result = await db.collection('contacts').insertOne(entry);
 
-        // Fire-and-forget email — don't block the response
-        sendContactNotificationEmail(entry).catch(err =>
-            console.error('Contact email notification failed:', err)
-        );
+        try {
+            await sendContactNotificationEmail(entry);
+        } catch (err) {
+            console.error('Contact email notification failed:', err);
+        }
 
         return NextResponse.json({ success: true, message: 'Message received successfully!', data: { id: result.insertedId } }, { status: 201 });
     } catch (error) {

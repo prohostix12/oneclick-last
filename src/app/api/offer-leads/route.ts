@@ -36,10 +36,11 @@ export async function POST(request: NextRequest) {
     const db = await getDatabase();
     const result = await db.collection('offer_leads').insertOne(newLead);
 
-    // Fire-and-forget email — don't block the response
-    sendOfferLeadNotificationEmail(newLead).catch(err =>
-      console.error('Offer lead email notification failed:', err)
-    );
+    try {
+      await sendOfferLeadNotificationEmail(newLead);
+    } catch (err) {
+      console.error('Offer lead email notification failed:', err);
+    }
 
     return NextResponse.json({ success: true, data: { ...newLead, id: result.insertedId } });
   } catch (error) {

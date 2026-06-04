@@ -102,17 +102,18 @@ export async function POST(request: NextRequest) {
     
     console.log('New scratch offer saved:', result.insertedId);
 
-    // Fire-and-forget email notification for scratch card claim
-    sendOfferLeadNotificationEmail({
-      name: newOffer.name,
-      phone: newOffer.phone,
-      email: newOffer.email,
-      businessName: newOffer.companyName || 'Not provided',
-      offerWon: newOffer.offer,
-      date: newOffer.scratchedAt
-    }).catch(err =>
-      console.error('Scratch offer lead email notification failed:', err)
-    );
+    try {
+      await sendOfferLeadNotificationEmail({
+        name: newOffer.name,
+        phone: newOffer.phone,
+        email: newOffer.email,
+        businessName: newOffer.companyName || 'Not provided',
+        offerWon: newOffer.offer,
+        date: newOffer.scratchedAt
+      });
+    } catch (err) {
+      console.error('Scratch offer lead email notification failed:', err);
+    }
 
     return NextResponse.json({
       success: true,
