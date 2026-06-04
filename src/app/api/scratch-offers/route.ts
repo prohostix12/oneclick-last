@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDatabase } from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
+import { sendOfferLeadNotificationEmail } from '@/lib/sendLeadEmail';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -100,6 +101,18 @@ export async function POST(request: NextRequest) {
     const result = await db.collection('scratch_offers').insertOne(newOffer);
     
     console.log('New scratch offer saved:', result.insertedId);
+
+    // Fire-and-forget email notification for scratch card claim
+    sendOfferLeadNotificationEmail({
+      name: newOffer.name,
+      phone: newOffer.phone,
+      email: newOffer.email,
+      businessName: newOffer.companyName || 'Not provided',
+      offerWon: newOffer.offer,
+      date: newOffer.scratchedAt
+    }).catch(err =>
+      console.error('Scratch offer lead email notification failed:', err)
+    );
 
     return NextResponse.json({
       success: true,
